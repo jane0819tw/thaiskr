@@ -1,0 +1,179 @@
+//background
+$colorbgYellowLight: #efebc2
+$colorbgYellowDark: #edd81a
+$colorbgRedLight: #84362b
+$colorbgRedDark: #2d2423
+$senceGradient: linear-gradient($colorbgRedDark,$colorbgRedLight,$colorbgYellowDark,$colorbgYellowLight)
+
+*
+  // border: 1px solid #000
+html,body
+  min-height: 100%
+
+  margin: 0
+  width: 100%
+  // background: $senceGradient
+html
+  // overflow: hidden
+  background-color: #222
+body
+  height: auto
+  overflow-x: hidden
+
+.quote
+  position: absolute
+  z-index: 10
+  left: 50%
+  top: -50%
+  transform: translate(-50%,0)
+  width: 80%
+  text-align: center
+
+  border: 1px solid rgba(255,255,255,0.5)
+  color: #000
+  opacity: 0
+  transition: 0.5s
+  &.show
+    animation: show 2s 2s forwards
+    @keyframes show
+      50%
+        transform: scale(1.2) translate(-50%,0)
+      100%
+        transform: scale(1) translate(-50%,0)
+        opacity: 1
+  h1
+    font-size: 30px
+    padding-top: 5px
+    font-weight: 900
+  p
+    font-size: 20px
+    margin: 0
+.jumbotron
+  margin-top: -2em
+  margin-bottom: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: relative
+  background-color: #FAC090
+  &::after
+    display: block
+    content: ''
+    width: 50%
+    height: 80px
+    background-color: #FAC090
+    position: absolute
+    top: 0
+    right: 0
+    transform: translate(0,-50%)
+    border-radius: 50%
+  h1
+    font-size: 25px
+    text-align: center
+    font-weight: 900
+  hr
+    width: 30px
+    border: 5px solid #000
+#items
+  // max-width: 900px
+  h1
+  div
+    &:hover
+      background-color: #FCD7B8
+      .item
+        h3
+          font-size: 1.1em
+          transition: 0.5s
+  .item
+    width: 80%
+    transform: translateY(0)
+    h3
+      font-size: 23px
+      position: relative
+      &::before
+        position: absolute
+        bottom: -10px
+        left: 25px
+        display: block
+        content: ''
+        width: 60px
+        height: 30px
+        background-color: darken(#FAC090,20)
+      span
+        font-size: 28px
+        font-weight: 900
+    hr
+      width: 0px
+      border: 1px solid #000
+      margin-left: 0
+      position: relative
+      &::after
+        position: absolute
+        display: block
+        content: ''
+        left: 0
+        top: 0
+        transform: translate(-50%,-50%)
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background-color: #000
+      &::before
+
+        display: block
+        content: ''
+        position: absolute
+        transform: translate(0,-50%)
+        left: 0
+        top: 0
+        width: 100px
+        height: 5px
+        background-size: 10px 10px
+        background-image: linear-gradient(45deg, transparent 50%,brown 50% ,brown 60%  ,transparent 60% ),
+        linear-gradient(135deg, transparent 50%,brown 50% ,brown 60%  ,transparent 60% )
+    ul
+      li
+        border-left: 3px solid #000
+        padding-left: 10px
+        margin: 10px
+        letter-spacing: 1px
+        span
+          font-weight: 900
+          font-size: 1.1em
+
+#panel
+  // width: 100%
+  height: 100vh
+  position: relative
+  button,.result
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+  .result
+    display: none
+    font-size: 25px
+    font-weight: 900
+    letter-spacing: 1.5px
+    color: #fff
+    padding: 20px
+    border: 3px solid #fff
+    background-color: rgba(0,0,0,0.8)
+    text-align: center
+#mycanvas
+  background-color: #222
+
+.sence.checked
+  .quote
+    color: #fff
+@media screen and (max-width: 378px)
+  .sence
+    width: 100%
+    min-height: 300px
+  .anusawari
+    >*:not(.temple)
+      display: none
+  .bigSwing
+    display: none
+  .building
+    display: block

@@ -1,0 +1,106 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: #171717;
+}
+
+.row {
+  height: auto;
+}
+
+.left {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-height: 80vh;
+}
+
+.left #mycanvas {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.left #infoIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #f24;
+  font-size: 1.5em;
+  margin: 1em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.left #infoIcon:hover {
+  color: #fff;
+}
+
+.left .btns {
+  position: absolute;
+  width: 50%;
+  top: 48%;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.left .btns .btn i {
+  font-size: 1.5em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.left .btns .btn i:hover {
+  color: #f24;
+}
+
+.left #image {
+  display: none;
+}
+
+.right {
+  max-height: 80vh;
+  color: #fff;
+}
+
+.right #player {
+  display: none;
+}
+
+.right #description {
+  max-height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 30px;
+}
+
+.right #description::-webkit-scrollbar {
+  width: 12px;
+}
+
+.right #description::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(238, 238, 238, 0.7);
+}
+
+.right #description pre {
+  color: #fff;
+}
+/*# sourceMappingURL=ytPlayer.css.map */

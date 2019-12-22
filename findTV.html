@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻　THAISKR ｜ 泰劇搜尋</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto+Mono|Trirong&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="./css/findTV.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <div id="app" class="pb-5 pt-5 mt-3">
+    <!-- jumbotron -->
+    <div class="jumbotron bg-dark text-white d-md-flex d-none flex-column align-items-center">
+      <div class="grid"></div>
+      <div id="tvshow" @wheel.prevent="wheel($event)">
+        <div id="showlist">
+          <div class="program m-3" v-for="program in programLatest">
+
+            <div class="poster" :style="bgCSS(program.poster_path)"></div>
+
+            <div class="info pl-3 pt-2">
+              <h3 class="m-0">{{program.name}}</h3>
+              <h4>{{program.original_name}}</h4>
+              <div class="genres d-flex mb-2">
+                <div class="genre m-1 p-1" v-for="genre in program.genres"> {{genre.name}}</div>
+              </div>
+              <div class="time">
+                <span class="mr-2"><i class="fas fa-table pr-2"></i>{{program.first_air_date}}</span>
+                <span class="episode">{{program.number_of_episodes}}集</span>
+                <span class="season">{{program.number_of_seasons}}季</span>
+              </div>
+
+              <p v-if="program.overview" class="mt-2">{{program.overview.slice(0,50)+`...`}}</p>
+
+              <div class="bottom">
+                <button @click="updateCast(program.id)" class="btn btn-outline-dark">演員</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- loading animation -->
+        <div class="loadingPanel flex-row">
+          <p>CLICK ME!</p>
+          <div id="giant">
+            <div class="head">
+              <div class="layer layer1"></div>
+              <div class="layer layer2"></div>
+              <div class="layer layer3"></div>
+            </div>
+            <div class="body">
+              <div class="header">
+                <div class="flower">
+                  <div class="leave leave1"></div>
+                  <div class="leave leave2"></div>
+                  <div class="leave leave3"></div>
+                  <div class="leave leave4"></div>
+                  <div class="center"></div>
+                </div>
+              </div>
+              <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="nose"></div>
+                <div class="coverMouth">
+                  <div class="mouth">
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="teeth"></div>
+                    <div class="big"></div>
+                    <div class="big big2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="description pr-5">
+            <h3>สวัสดีครับ!<br> my name is ยักษ์ !</h3>
+            <p>
+              歡迎來到泰國劇院，你可以在這裡的劇院螢幕滑動滑鼠滾輪來看有哪些熱門泰劇，或是使用下方搜尋來找到你要的泰劇！<br>
+              <i class="mr-3 far fa-hand-point-right"></i>點擊一下觀看泰劇詳細內容<br>
+              <i class="mr-3 far fa-hand-point-right"></i>點擊兩下加入我的最愛!<br>
+              祝你找到你要的泰劇~<br>ขอบคุณค่ะ<i class="ml-3 far fa-hand-scissors"></i><br>
+              現在點我進入劇場吧~
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid"></div>
+      <!-- cast modal -->
+      <div id="castPanel" v-show="isCastOpen">
+        <div class="title d-flex justify-content-between">
+          <h3>演員表</h3>
+          <i class="m-2 fas fa-times" @click="isCastOpen=false"></i>
+        </div>
+
+        <ul>
+          <li v-for="cast in castlist" class="d-flex mb-2 pb-3">
+            <div class="image" :class="{female: cast.gender===1,male: cast.gender===2}"
+              :style="bgCSS(cast.profile_path)"></div>
+            <span class="charaName">{{cast.character}}</span>
+            <span>{{cast.name}}</span>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="selection" class="d-flex flex-column align-items-center">
+      <div id="filter" class="mt-3 row  mb-3">
+        <div class="ml-5 mt-3 my-sm-auto ml-sm-3">
+          <button id="collapse-normal" type="button" class="btn btn-dark ml-sm-5" data-toggle="collapse"
+            data-target="#collapseNormal" onclick="closeCollapse('collapseKeyword')">基本查詢</button>
+          <button id="collapse-keyword" type="button" class="btn btn-dark" data-toggle="collapse"
+            data-target="#collapseKeyword" onclick="closeCollapse('collapseNormal')">關鍵字查詢</button>
+        </div>
+      </div>
+      <!-- normal search -->
+      <div class="collapse flex-column justify-content-center align-items-center" id="collapseNormal">
+        <div class="input-group mb-3">
+          <select class="custom-select" id="sort_by">
+            <option value="first_air_date.desc" selected>依上映時間排序(近到遠)</option>
+            <option value="first_air_date.asc">依上映時間排序(遠到近)</option>
+            <option value="vote_average.desc">依評價高低排序(高到低)</option>
+            <option value="vote_average.asc">依評價高低排序(低到高)</option>
+          </select>
+        </div>
+        <div class="input-group mb-3 d-flex flex-column justify-content-center">
+          <label id="type" for="" class="text-center">類型</label>
+          <ul class="row p-0 m-0">
+            <li v-for="genre in genres" class="col-3">
+
+              <label :for="'genre'+genre.id">
+                <input :id="'genre'+genre.id" name="genre" type="checkbox" :value="genre.id">{{genre.name}}
+              </label>
+            </li>
+          </ul>
+        </div>
+        <button @click="normalSearch" id="normalSearchBtn" class="btn btn-lg btn-outline-light">搜尋</button>
+      </div>
+
+      <!-- keyword search -->
+      <div class="collapse" id="collapseKeyword">
+        <div class="input-group mb-3">
+          <input id="keywordInput" type="text" class="form-control" placeholder="輸入英文關鍵字">
+          <div class="input-group-append">
+            <button @click="keywordSearch" id="keywordSearchBtn" class="btn btn-outline-light" type="button"
+              id="button-addon2">搜尋</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="noresults" v-if="programList.length==0">
+      <h1 class="text-center m-3 p-3">oops!! 查無相關泰劇:(</h1>
+    </div>
+    <div id="results" class="container mt-5 d-flex justify-content-center align-items-center flex-column">
+      <div class="row p-3" id="data-panel" v-if="programList.length>0">
+        <div class="box col-12 col-md-3 mb-3 mt-3" v-for="(program,i) in programList">
+          <div class="image" :style="bgCSS(program.poster_path)">
+            <div @click="getProgramData(program.id,$event)" class="content d-flex flex-column justify-content-center">
+              <p>{{program.original_name}}</p>
+              <p v-if="program.name!=program.original_name">{{program.name}}</p>
+            </div>
+
+          </div>
+          <i class="fas fa-heart" :class="{fav:checkFav(program.id)}"></i>
+          <div class="smallPic" :class="'smallPic'+program.id" :style="bgCSS(program.poster_path)"></div>
+        </div>
+      </div>
+    </div>
+    <!-- pagination -->
+    <nav aria-label="Page navigation example" class="mt-5">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" v-if="pageNow!=1">
+          <a :data-id="pageNow-1" class="page-link" href="#selection" @click="getPageData(pageNow-1)">Previous</a></li>
+        <li class="page-item" :class="{active: pageNow==n}" v-for="n in pagination_show">
+          <a :data-id="n" class="page-link" href="#selection" @click="getPageData(n)">{{n}}</a></li>
+        <li class="page-item" v-if="pageNow!=pageTotal && programList.length!=0">
+          <a :data-id="pageNow+1" class="page-link" href="#selection" @click="getPageData(pageNow+1)">Next</a></li>
+      </ul>
+    </nav>
+
+    <div id="detailPanel" v-if="isDetailOpen && detailProgram" class="row">
+      <div class="left col-12 col-md-6">
+        <h3>{{detailProgram.name}}</h3>
+        <div class="time">
+          <i class="fas fa-calendar-day"></i>
+          <span class="date">{{detailProgram.first_air_date}}</span>
+          <span>{{detailProgram.number_of_episodes}}集</span>
+          <span>{{detailProgram.number_of_seasons}}季</span>
+        </div>
+        <div class="genres mb-3 mt-3">
+          <div class="genre mr-2 p-2" v-for="genre in detailProgram.genres">{{genre.name}}</div>
+        </div>
+        <p v-if="detailProgram.overview==''">無相關內容介紹。</p>
+        <p>{{detailProgram.overview}}</p>
+      </div>
+      <div class="right col-12 col-md-6">
+        <div class="title d-flex justify-content-between">
+          <h3>演員表</h3>
+          <i class="m-2 fas fa-times" @click="isDetailOpen=false"></i>
+        </div>
+        <p v-if="detailProgram.credits.cast.length==0">無演員資訊。</p>
+        <ul class="p-0">
+          <li v-for="actor in detailProgram.credits.cast" class="mb-2">
+            <div class="image" :style="bgCSS(actor.profile_path)"></div>
+            <div class="name">
+              <div>{{actor.character}}</div>
+              <div>{{actor.name.slice(0,20)}}</div>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- favorite button -->
+    <div id="favlistBtn" @click="isFavOpen = !isFavOpen">
+      <i class="fas fa-heart"></i>
+      <div v-if="favlist.length>0">{{favlist.length}}</div>
+    </div>
+    <!-- favorite panel -->
+    <div id="favPanel" v-if="isFavOpen">
+      <h3 class="pb-3 m-3">最愛泰劇</h3>
+      <p v-if="favlist.length==0">還沒有泰劇加入ㄛ！</p>
+      <ul>
+        <li @click="updateDetail(fav.id)" class="m-3 pb-2 d-flex justify-content-between align-items-center"
+          v-for="(fav,favIndex) in favlist">
+          <div class="image" :style="bgCSS(fav.poster_path)"></div>
+          <p>{{fav.name}}</p>
+          <i @click.stop="favlist.splice(favIndex, 1)" class="delete fas fa-trash-alt"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+  </script>
+  <!-- include js library -->
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="./js/findTV.js"></script>
+</body>
+
+</html>

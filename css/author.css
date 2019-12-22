@@ -1,0 +1,123 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #E8F2EA;
+}
+
+.panel {
+  max-width: 800px;
+}
+
+.panel h1 {
+  font-size: 25px;
+  font-weight: 900;
+  display: none;
+}
+
+.panel ul li {
+  margin: 10px;
+  min-height: 300px;
+  border-bottom: 3px solid #000;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.panel ul li:hover {
+  background-color: #bbedda;
+}
+
+.panel ul li::before, .panel ul li::after {
+  display: block;
+  content: '';
+  background-color: #000000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+.panel ul li::after {
+  right: 0;
+}
+
+.panel ul li .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.panel ul li .left .avatar {
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #FAC090;
+  width: 150px;
+  height: 150px;
+}
+
+.panel ul li .left .info {
+  margin-bottom: 10px;
+}
+
+.panel ul li .left .info .contact {
+  font-weight: 800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.panel ul li .left .info .contact i {
+  margin-right: 5px;
+}
+
+.panel ul li .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel ul li .right p {
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  line-height: 25px;
+}
+
+.panel ul li .right p a {
+  text-decoration: none;
+  color: #FAC090;
+}
+/*# sourceMappingURL=author.css.map */

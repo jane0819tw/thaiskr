@@ -1,0 +1,68 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: #543c3d;
+}
+
+#panel {
+  min-height: 100%;
+  width: 100%;
+}
+
+#panel #controlPanel {
+  vertical-align: middle;
+  height: 30vh;
+  font-weight: 900;
+  color: #fff;
+}
+
+#panel #controlPanel > * {
+  padding: 10px;
+}
+
+#panel #controlPanel i {
+  border-radius: 50%;
+  background-color: #000;
+}
+
+#panel #controlPanel select {
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+
+#panel #controlPanel select option {
+  color: #000;
+}
+
+#panel #canvasPanel {
+  width: 100%;
+}
+
+#panel #canvasPanel #mycanvas {
+  max-width: 100%;
+}
+
+#myModal {
+  top: 30%;
+}
+
+#myModal .modal-dialog .modal-content {
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(50%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-box-shadow: 0 0 20px #fff;
+          box-shadow: 0 0 20px #fff;
+  border: none;
+  font-weight: 900;
+  color: #fff;
+}
+/*# sourceMappingURL=lettersGame.css.map */

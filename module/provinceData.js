@@ -1,0 +1,386 @@
+export let provinceData = [{
+  part: 'Isan',
+  thai_name: 'อำนาจเจริญ',
+  chi_name: '安納乍倫府',
+  eng_name: 'Amnat Charoen'
+}, {
+  part: 'Center',
+  thai_name: 'อ่างทอง',
+  chi_name: '紅統府',
+  eng_name: 'Ang Thong'
+}, {
+  part: 'Center',
+  thai_name: 'พระนครศรีอยุธยา',
+  chi_name: '大城府',
+  eng_name: 'Ayutthaya'
+}, {
+  part: 'Center',
+  thai_name: 'กำแพงเพชร',
+  chi_name: '曼谷',
+  eng_name: 'Bangkok'
+}, {
+  part: 'Isan',
+  thai_name: 'บึงกาฬ',
+  chi_name: '汶干府',
+  eng_name: 'Bueng Kan'
+}, {
+  part: 'Isan',
+  thai_name: 'บุรีรัมย์',
+  chi_name: '武里南府',
+  eng_name: 'Buriram'
+}, {
+  part: 'East',
+  thai_name: 'ฉะเชิงเทรา',
+  chi_name: '北柳府',
+  eng_name: 'Chachoengsao'
+}, {
+  part: 'Center',
+  thai_name: 'ชัยนาท',
+  chi_name: '猜納府',
+  eng_name: 'Chai Nat'
+}, {
+  part: 'Isan',
+  thai_name: 'ชัยภูมิ',
+  chi_name: '猜也蓬府',
+  eng_name: 'Chaiyaphum'
+}, {
+  part: 'East',
+  thai_name: 'จันทบุรี',
+  chi_name: '尖竹汶府',
+  eng_name: 'Chanthaburi'
+}, {
+  part: 'North',
+  thai_name: 'เชียงใหม่',
+  chi_name: '清邁府',
+  eng_name: 'Chiang Mai'
+}, {
+  part: 'North',
+  thai_name: 'เชียงราย',
+  chi_name: '清萊府',
+  eng_name: 'Chiang Rai'
+}, {
+  part: 'East',
+  thai_name: 'ชลบุรี',
+  chi_name: '春武里府',
+  eng_name: 'Chonburi'
+}, {
+  part: 'South',
+  thai_name: 'ชุมพร',
+  chi_name: '春蓬府',
+  eng_name: 'Chumphon'
+}, {
+  part: 'Isan',
+  thai_name: 'กาฬสินธุ์',
+  chi_name: '加拉信府',
+  eng_name: 'Kalasin'
+}, {
+  part: 'Center',
+  thai_name: 'กำแพงเพชร',
+  chi_name: '甘烹碧府',
+  eng_name: 'Kamphaeng Phet'
+}, {
+  part: 'West',
+  thai_name: 'กาญจนบุรี',
+  chi_name: '北碧府',
+  eng_name: 'Kanchanaburi'
+}, {
+  part: 'Isan',
+  thai_name: 'ขอนแก่น',
+  chi_name: '孔敬府',
+  eng_name: 'Khon Kaen'
+}, {
+  part: 'South',
+  thai_name: 'กระบี่',
+  chi_name: '甲米府',
+  eng_name: 'Krabi'
+}, {
+  part: 'North',
+  thai_name: 'ลำปาง',
+  chi_name: '南邦府',
+  eng_name: 'Lampang'
+}, {
+  part: 'North',
+  thai_name: 'ลำพูน',
+  chi_name: '南奔府',
+  eng_name: 'Lamphun'
+}, {
+  part: 'Isan',
+  thai_name: 'เลย',
+  chi_name: '黎府',
+  eng_name: 'Loei'
+}, {
+  part: 'Center',
+  thai_name: 'ลพบุรี',
+  chi_name: '華富里府',
+  eng_name: 'Lopburi'
+}, {
+  part: 'North',
+  thai_name: 'แม่ฮ่องสอน',
+  chi_name: '夜豐頌府',
+  eng_name: 'Mae Hong Son'
+}, {
+  part: 'Isan',
+  thai_name: 'มหาสารคาม',
+  chi_name: '馬哈沙拉堪府',
+  eng_name: 'Maha Sarakham'
+}, {
+  part: 'Isan',
+  thai_name: 'มุกดาหาร',
+  chi_name: '穆達漢府',
+  eng_name: 'Mukdahan'
+}, {
+  part: 'Center',
+  thai_name: 'นครนายก',
+  chi_name: '那空那育府',
+  eng_name: 'Nakhon Nayok'
+}, {
+  part: 'West',
+  thai_name: 'นครปฐม',
+  chi_name: '佛統府',
+  eng_name: 'Nakhon Pathom'
+}, {
+  part: 'Isan',
+  thai_name: 'นครพนม',
+  chi_name: '那空拍儂府',
+  eng_name: 'Nakhon Phanom'
+}, {
+  part: 'Isan',
+  thai_name: 'นครราชสีมา',
+  chi_name: '呵叻府',
+  eng_name: 'Nakhon Ratchasima'
+}, {
+  part: 'Center',
+  thai_name: 'สวรรค',
+  chi_name: '北欖坡府',
+  eng_name: 'Nakhon Sawan'
+}, {
+  part: 'South',
+  thai_name: 'นครศรีธรรมราช',
+  chi_name: '洛坤府',
+  eng_name: 'Nakhon Si Thammarat'
+}, {
+  part: 'North',
+  thai_name: 'น่าน',
+  chi_name: '難府',
+  eng_name: 'Nan'
+}, {
+  part: 'South',
+  thai_name: 'นราธิวาส',
+  chi_name: '陶公府',
+  eng_name: 'Narathiwat'
+}, {
+  part: 'Isan',
+  thai_name: 'หนองบัวลำภู',
+  chi_name: '農磨蘭普府',
+  eng_name: 'Nong Bua Lamphu'
+}, {
+  part: 'Isan',
+  thai_name: 'หนองคาย',
+  chi_name: '廊開府',
+  eng_name: 'Nong Khai'
+}, {
+  part: 'Center',
+  thai_name: 'นนทบุรี',
+  chi_name: '暖武里府',
+  eng_name: 'Nonthaburi'
+}, {
+  part: 'Center',
+  thai_name: 'ปทุมธานี',
+  chi_name: '巴吞他尼府',
+  eng_name: 'Pathum Thani'
+}, {
+  part: 'South',
+  thai_name: 'ปัตตานี',
+  chi_name: '北大年府',
+  eng_name: 'Pattani'
+}, {
+  part: 'South',
+  thai_name: 'พังงา',
+  chi_name: '攀牙府',
+  eng_name: 'Phang Nga'
+}, {
+  part: 'South',
+  thai_name: 'พัทลุง',
+  chi_name: '高頭廊府',
+  eng_name: 'Phatthalung'
+}, {
+  part: 'North',
+  thai_name: 'พะเยา',
+  chi_name: '帕堯府',
+  eng_name: 'Phayao'
+}, {
+  part: 'Center',
+  thai_name: 'เพชรบูรณ์',
+  chi_name: '碧差汶府',
+  eng_name: 'Phetchabun'
+}, {
+  part: 'South',
+  thai_name: 'เพชรบุรี',
+  chi_name: '佛丕府',
+  eng_name: 'Phetchaburi'
+}, {
+  part: 'Center',
+  thai_name: 'พิจิตร',
+  chi_name: '披集府',
+  eng_name: 'Phichit'
+}, {
+  part: 'Center',
+  thai_name: 'พิษณุโลก',
+  chi_name: '彭世洛府',
+  eng_name: 'Phitsanulok'
+}, {
+  part: 'North',
+  thai_name: 'แพร่',
+  chi_name: '帕府',
+  eng_name: 'Phrae'
+}, {
+  part: 'South',
+  thai_name: 'ภูเก็ต',
+  chi_name: '普吉府',
+  eng_name: 'Phuket'
+}, {
+  part: 'East',
+  thai_name: 'ปราจีนบุรี',
+  chi_name: '巴真府',
+  eng_name: 'Prachin Buri'
+}, {
+  part: 'South',
+  thai_name: 'ประจวบคีรีขันธ์',
+  chi_name: '巴蜀府',
+  eng_name: 'Changwat Prachuap Khiri Khan'
+}, {
+  part: 'South',
+  thai_name: 'ระนอง',
+  chi_name: '拉廊府',
+  eng_name: 'Ranong'
+}, {
+  part: 'West',
+  thai_name: 'ราชบุรี',
+  chi_name: '叻丕府',
+  eng_name: 'Ratchaburi'
+}, {
+  part: 'East',
+  thai_name: 'ระยอง',
+  chi_name: '羅勇府',
+  eng_name: 'Rayong'
+}, {
+  part: 'Isan',
+  thai_name: 'ร้อยเอ็ด',
+  chi_name: '黎逸府',
+  eng_name: 'Roi Et'
+}, {
+  part: 'East',
+  thai_name: 'สระแก้ว',
+  chi_name: '沙繳府',
+  eng_name: 'Sa Kaeo'
+}, {
+  part: 'Isan',
+  thai_name: 'สกลนคร',
+  chi_name: '色軍府',
+  eng_name: 'Sakon Nakhon'
+}, {
+  part: 'Center',
+  thai_name: 'สมุทรปราการ',
+  chi_name: '北欖府',
+  eng_name: 'Samut Prakan'
+}, {
+  part: 'West',
+  thai_name: 'สมุทรสาคร',
+  chi_name: '龍仔厝府',
+  eng_name: 'Samut Sakhon'
+}, {
+  part: 'West',
+  thai_name: 'สมุทรสงคราม',
+  chi_name: '夜功府',
+  eng_name: 'Samut Songkhram'
+}, {
+  part: 'Center',
+  thai_name: 'สระบุรี',
+  chi_name: '北標府',
+  eng_name: 'Saraburi'
+}, {
+  part: 'South',
+  thai_name: 'สตูล',
+  chi_name: '沙敦府',
+  eng_name: 'Satun'
+}, {
+  part: 'Center',
+  thai_name: 'สิงห์บุรี',
+  chi_name: '信武里府',
+  eng_name: 'Sing Buri'
+}, {
+  part: 'Isan',
+  thai_name: 'ศรีสะเกษ',
+  chi_name: '四色菊府',
+  eng_name: 'Changwat Sisaket'
+}, {
+  part: 'South',
+  thai_name: 'สงขลา',
+  chi_name: '宋卡府',
+  eng_name: 'Songkhla'
+}, {
+  part: 'Center',
+  thai_name: 'สุโขทัย',
+  chi_name: '素可泰府',
+  eng_name: 'Sukhothai'
+}, {
+  part: 'West',
+  thai_name: 'สุพรรณบุรี',
+  chi_name: '素攀府',
+  eng_name: 'Suphan Buri'
+}, {
+  part: 'South',
+  thai_name: 'สุราษฎร์ธานี',
+  chi_name: '萬倫府',
+  eng_name: 'Surat Thani'
+}, {
+  part: 'Isan',
+  thai_name: 'สุรินทร์',
+  chi_name: '素林府',
+  eng_name: 'Surin'
+}, {
+  part: 'Center',
+  thai_name: 'ตาก',
+  chi_name: '達府',
+  eng_name: 'Tak'
+}, {
+  part: 'South',
+  thai_name: 'ตรัง',
+  chi_name: '董里府',
+  eng_name: 'Trang'
+}, {
+  part: 'East',
+  thai_name: 'ตราด',
+  chi_name: '達叻府',
+  eng_name: 'Trat'
+}, {
+  part: 'Isan',
+  thai_name: 'อุบลราชธานี',
+  chi_name: '烏汶府',
+  eng_name: 'Ubon Ratchathani'
+}, {
+  part: 'Isan',
+  thai_name: 'อุดรธานี',
+  chi_name: '烏隆府',
+  eng_name: 'Udon Thani'
+}, {
+  part: 'Center',
+  thai_name: 'อุทัยธานี',
+  chi_name: '色梗港府',
+  eng_name: 'Uthai Thani'
+}, {
+  part: 'North',
+  thai_name: 'อุตรดิตถ์',
+  chi_name: '程逸府',
+  eng_name: 'Uttaradit'
+}, {
+  part: 'South',
+  thai_name: 'ยะลา',
+  chi_name: '也拉府',
+  eng_name: 'Yala'
+}, {
+  part: 'Isan',
+  thai_name: 'ยโสธร',
+  chi_name: '益梭通府',
+  eng_name: 'Yasothon'
+}]

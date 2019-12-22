@@ -1,0 +1,319 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+}
+
+html, body {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: relative;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #555;
+}
+
+.panel h3 {
+  text-align: center;
+  color: #f9c500;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.panel .show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 800px;
+  border-radius: 5px;
+  border: solid 1px #fff;
+}
+
+.panel .show * {
+  margin: 10px;
+}
+
+.panel .show #input {
+  font-size: 20px;
+  padding: 10px;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.panel .show #input:focus {
+  border: solid 2px #555;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.panel .show .enter {
+  width: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #f9c500;
+  outline: none;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.panel .show .enter.rotate {
+  -webkit-animation: rotate 1s 1;
+          animation: rotate 1s 1;
+}
+
+.panel .show .enter:hover {
+  color: #fff;
+  background-color: #222;
+}
+
+.panel .show .showlist {
+  width: 200px;
+  max-width: 200px;
+  border: solid 1px #222;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: auto;
+}
+
+.panel .show .showlist::-webkit-scrollbar {
+  width: 5px;
+}
+
+.panel .show .showlist::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.panel .show .showlist::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.panel .show .soundLetter {
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.panel .keyboards {
+  width: 800px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.panel .keyboards .row {
+  padding: 5px;
+}
+
+.panel .keyboards .row.row2 * {
+  left: 25px;
+}
+
+.panel .keyboards .row.row3 * {
+  left: 35px;
+}
+
+.panel .keyboards .row.row4 * {
+  left: 60px;
+}
+
+.panel .keyboards .row .kb {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  background-color: #222;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-right: 3px;
+  margin-left: 5px;
+}
+
+.panel .keyboards .row .kb .letter, .panel .keyboards .row .kb .thai {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  width: 45%;
+  height: 95%;
+  border-radius: 0;
+  color: #fff;
+}
+
+.chCor {
+  background-color: red;
+}
+
+.description {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  padding: 10px;
+  color: #f5f5f5;
+}
+
+.description .button {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(34, 34, 34, 0.3);
+  font-weight: 800;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.description .button:hover {
+  background-color: #222;
+}
+
+.description p {
+  margin: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222;
+  padding: 5px;
+}
+
+.close {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.open {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logos {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logos * {
+  margin: 5px;
+}
+
+.logos .logo {
+  width: 30px;
+  height: 30px;
+  background-image: url(https://scontent.ftpe7-4.fna.fbcdn.net/v/t1.0-9/53496246_331165397517037_8439765351167688704_n.jpg?_nc_cat=105&_nc_eui2=AeHab9W4Tzq6faGJJ6mFWWQqTZ5k0iT0DAOljmxVVp9LLfg6fhXdsO7O735NtwDsxXD1lWVz4GihsEyYOZXFaYtLQQqVIGBzP7f44OYNTYxKjg&_nc_oc=AQkJZk47vjcC4hc8Mh7IhPb8Xr1tn3_Ix1H8VFCVZx-mVJe2zBjn50UGUJtCjopvggg&_nc_ht=scontent.ftpe7-4.fna&oh=9ed410cae61c7bab1a5123ebdca233ee&oe=5E3286EB);
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.logos a {
+  color: #4267B2;
+}
+
+.logos a.yt {
+  color: red;
+}
+
+.logos a i {
+  font-size: 30px;
+}
+/*# sourceMappingURL=keyboard.css.map */

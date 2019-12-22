@@ -1,0 +1,144 @@
+*
+  // border: 1px solid #000
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體'
+html,body
+  margin: 0
+  min-height: 100%
+  // height: 100%
+  background-color: #E8F2EA
+body
+  display: flex
+  align-items: center
+  flex-direction: column
+
+#main
+  height: 100%
+  width: 100%
+
+#panel
+  h1
+    font-size: 30px
+    font-weight: 900
+  #sourceList
+    li
+      background-color: transparent
+      a
+        text-decoration: none
+        font-weight: 900
+        color: #555
+#giant
+  .body
+    background-color: #f24
+.right
+  p
+    text-align: center
+    letter-spacing: 1px
+    color: #ef5f5f
+    font-weight: 700
+    b
+      font-weight: 900
+      color: #b22020
+
+// form
+$dark: #DCF2EA// #C8876A
+$light: #B2E7D3// #F8C18F
+#card
+  background-color: $dark
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 10px
+  transform: scale(0.9)
+  box-shadow: 0 0 10px #fff
+  form
+    //transform: scale(0.9)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 15px
+    border-radius: 10px
+    >*
+      margin: 2px
+      padding: 10px
+      outline: none
+
+    h1
+      font-weight: 900
+      font-size: 25px
+    input,textarea
+      font-size: 15px
+      background-color: $light
+      border: solid 4px lighten($dark,4)
+    h3
+      padding: 0
+      margin: 0
+      font-size: 13px
+    .gender
+      display: flex
+      justify-content: center
+
+      i
+        margin-right: 15px
+        margin-left: 5px
+        font-size: 20px
+      input
+        cursor: pointer
+        appearance: none
+        outline: none
+        width: 20px
+        height: 20px
+        background-color: lighten($dark,10)
+        transition: 0.5s
+        border-radius: 50%
+        &:checked
+          background-color: darken($dark,8)
+    h3
+      font-weight: 900
+    .interest
+      font-size: 15px
+      font-weight: 900
+      *
+        vertical-align: bottom
+      input
+        appearance: none
+        cursor: pointer
+        outline: none
+        width: 20px
+        height: 20px
+        background-color: lighten($dark,10)
+        transition: 0.5s
+        &:checked
+          background-color: darken($dark,8)
+
+    button
+      background-color: $light
+      font-weight: 900
+      letter-spacing: 3px
+      cursor: pointer
+      border: solid 4px lighten($dark,4)
+      border-radius: 10px
+      &:hover
+        background-color: lighten($dark,4)
+        color: $light
+        //border: solid 4px $light
+form
+  .result
+    background-color: $light
+    border: solid 3px lighten($dark,10)
+    border-radius: 5px
+    h3
+    ul
+      margin: 0
+      padding: 0
+      list-style-type: none
+      li
+        margin: 5px
+        list-style-type: none
+        a
+          color: darken($dark,4)
+          text-decoration: none
+          font-weight: 700
+          transition: 0.5s
+          &:hover
+            color: darken($dark,20)
+            font-weight: 900

@@ -1,0 +1,295 @@
+* {
+  font-family: "Oswald", "Trirong", "微軟正黑體";
+  // border: 1px solid #fff;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 900px;
+}
+
+.title_area {
+  color: #fff;
+  font-size: 30px;
+  padding: 1em;
+
+  hr {
+    width: 100px;
+    margin-left: 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+  }
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  #edit {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+
+    i {
+      font-size: 20px;
+      background-color: #f24;
+      border-radius: 50%;
+      padding: 10px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.2s;
+      margin: 5px;
+      float: right;
+
+      &#editText,
+      &#editMap {
+        background-color: #888;
+        display: none;
+        transition: 0.2s;
+        font-size: 10px;
+      }
+
+      &:hover {
+        transition: 0.2s;
+        background-color: darken(#f24, 15);
+        color: #fff;
+      }
+
+    }
+  }
+
+
+  svg {
+    height: 85vh;
+  }
+}
+
+svg path {
+  stroke: #fff;
+  fill: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    -webkit-transform: scale(0.99);
+    transform: scale(0.99);
+    fill: #b99362;
+  }
+}
+
+.active {
+  fill: #b99362;
+}
+
+.fillCapital {
+  fill: #f24;
+}
+
+span {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.forcast {
+  h5 {
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+
+    h4,
+    h2,
+      {
+      margin: 0;
+    }
+
+    .left {
+      flex: 1;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+
+    .right {
+      flex: 1;
+      box-sizing: border-box;
+      display: inline-block;
+      height: 100%;
+    }
+  }
+
+  .week {
+    display: flex;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    border-top: 5px solid brown;
+
+    .day {
+      height: 120px;
+      flex: 1;
+      transform: scale(0.6);
+      border-left: solid 1px #fff;
+      padding-left: 30px;
+    }
+  }
+}
+
+.forcast-pic,
+.day {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  transform: scale(1.3);
+  max-width: 150px;
+
+  .sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #EC6E4C;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .winds {
+    height: 100%;
+    position: relative;
+    display: none;
+
+    .wind {
+      position: absolute;
+      height: 40px;
+      border-radius: 100px;
+      background-color: #222;
+      animation: shake 2s infinite;
+      border: 1px dashed #eee;
+
+      @keyframes shake {
+        0% {
+          transform: translate(0, 0)
+        }
+
+        50% {
+          transform: translate(-2%, -3%)
+        }
+
+        100% {
+          transform: translate(0, 0)
+        }
+      }
+
+      &:before {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        border-radius: 200px;
+        left: -10%;
+        top: 40%;
+        position: relative;
+
+      }
+
+      @for $i from 1 through 3 {
+        &.wind#{$i} {
+          width: calc(#{(80px-$i*10px)});
+          top: calc(#{(60%-$i*10%)});
+          left: calc(#{$i*1%});
+        }
+      }
+
+    }
+  }
+
+  .light {
+    position: absolute;
+    left: 20%;
+    top: 70%;
+    width: 0%;
+    height: 0px;
+    border: 10px solid transparent;
+    border-top-color: hsla(13, 81%, 61%, 1);
+    border-left-color: hsla(13, 81%, 61%, 1);
+    animation: shine 1s infinite;
+    display: none;
+
+    @keyframes shine {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &:before {
+      display: block;
+      content: '';
+      height: 0;
+      width: 0;
+      border: 10px solid transparent;
+      border-bottom-color: #EC6E4C;
+      border-right-color: #EC6E4C;
+      top: -30px;
+      left: -20px;
+      position: absolute;
+    }
+  }
+
+  .rains {
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    background-image: linear-gradient(-60deg, transparent 0%, transparent 50%, #ddd 50%, #ccc 70%, transparent 70%, transparent 100%);
+    background-size: 8px 8px;
+    animation: shine 1s infinite 0.3s, shake 1s infinite 0.6s;
+  }
+
+}
+
+.modal {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width:576px) {
+
+  svg,
+  #edit {
+    display: none;
+  }
+}

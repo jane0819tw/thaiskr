@@ -1,0 +1,70 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+*
+  // border: 1px solid #000
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體'
+
+html,body
+  margin: 0
+  min-height: 100%
+body
+  display: flex
+  justify-content: center
+  background-color: #E8F2EA
+.panel
+  max-width: 800px
+  h1
+    font-size: 25px
+    font-weight: 900
+    display: none
+  ul
+    li
+      margin: 10px
+      min-height: 300px
+      border-bottom: 3px solid #000
+      position: relative
+      transition: 0.3s
+      &:hover
+        background-color: #bbedda
+        // background-color: rgba(0,0,0,0.3)
+      &::before,&::after
+        display: block
+        content: ''
+        background-color: #000000
+        border-radius: 50%
+        position: absolute
+        bottom: -10px
+        +size(20px)
+      &::after
+        right: 0
+      .left
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        .avatar
+          border-radius: 50%
+          background-size: cover
+          background-position: center
+          border: 5px solid #FAC090
+          +size(150px)
+        .info
+          margin-bottom: 10px
+          .contact
+            font-weight: 800
+            display: flex
+            justify-content: center
+            i
+              margin-right: 5px
+      .right
+        display: flex
+        justify-content: center
+        align-items: center
+        p
+          letter-spacing: 1.5px
+          font-weight: 800
+          line-height: 25px
+          a
+            text-decoration: none
+            color: #FAC090

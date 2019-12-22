@@ -1,0 +1,626 @@
+//color settings
+$colorWallGreyLight: #D2D3D8
+$colorWallGreyDark: #A1A6B1
+$colorSwingRedLight: #E6282A
+$colorSwingRedDark: #D2101A
+$colorTemTop: #CEA86E
+$colorWindow: #222D41
+$colorTemMainWhite: #d9d4d1
+$colorTemMainYellow: #CDBA9D
+$colorTemMainBorder: #D3C8BD
+$colorTemBottomLight: #CABEBC
+$colorTemBottomDark: #b5a6a3
+$colorDoorRed: #9D3624
+$colorDoorYellow: #CAA76B
+$colorDoorBrown: #8E5756
+$colorDoorGrey: #8E817F
+//background
+$colorbgYellowLight: #efebc2
+$colorbgYellowDark: #edd81a
+$colorbgRedLight: #84362b
+$colorbgRedDark: #2d2423
+$senceGradient: linear-gradient($colorbgRedDark,$colorbgRedLight,$colorbgYellowDark,$colorbgYellowLight)
+//mixin settings
+@mixin size($w,$h:$w,$bdrs:0)
+  width: $w
+  height: $h
+  border-radius: $bdrs
+@mixin flex($j:center,$a:center,$d:row)
+  display: flex
+  justify-content: $j
+  align-items: $a
+  flex-direction: $d
+@mixin abpos
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+@mixin fakeItem($w,$h,$bdrs:0,$c:black)
+  content: ""
+  display: block
+  background-color: $c
+  +size($w,$h,$bdrs)
+@mixin window($w,$h:$w,$c:black)
+  .window
+    top: -10px
+    background-color: $c
+    +size($w,$h,50%)
+
+@mixin door
+  //background-color: red
+  +size(25px,100px)
+  //製作多邊形 從最高點開始
+    clip-path: polygon(50% 0, 100% 10%, 100% 100%, 0 100%, 0 10%)
+    background-color: $colorDoorGrey
+  &:before
+    position: absolute
+    bottom: 0
+    +fakeItem(80%,70%,0,$colorDoorBrown)
+
+  &:after
+    position: absolute
+    bottom: 0
+    +fakeItem(60%,50%,0,$colorDoorRed)
+
+@mixin partTopBottom($bdrs:0)
+  +size(44px,180px)
+  +flex(center,center,column)
+  .partTop
+    box-sizing: border-box
+    border: solid 10px $colorTemMainBorder
+    background-color: $colorTemMainYellow
+    +size(100%,70%,$bdrs)
+
+    //box-shadow: inset 0 0 10px black
+  .partBottom
+    box-sizing: border-box
+    border-bottom: solid 20px
+    background-color: $colorTemMainYellow
+    +size(100%,30%)
+
+    &:before
+      background-color: #fff
+      position: absolute
+      +fakeItem(120%,5px)
+
+@mixin stone($w,$h)
+  position: absolute
+  +fakeItem($w,$h,0,$colorTemMainBorder)
+
+*
+  //border: solid 1px
+  font-family: 'Exo','微軟正黑體','Charm'
+  position: relative
+
+label
+  max-width: 100%
+  width: 100%
+  position: relative
+  // transform: scale(0.8)
+  .texts
+    display: flex
+    .t1
+      flex: 8
+      color: rgba(#fff,0.2)
+    a
+      flex: 1
+      text-decoration: none
+      color: pink
+      font-size: 20px
+    .icons
+      flex: 1
+      display: flex
+      *
+        flex: 1
+
+  input
+    display: none
+ul
+  list-style: none
+  padding: 0
+  li
+    letter-spacing: 1px
+    font-size: 15px
+    margin-top: 5px
+.sence
+  cursor: pointer
+  border-radius: 10px
+  background: $senceGradient
+  background-size: 100% 500%
+  background-position: 0 100%
+  position: relative
+  +size(100%,600px)
+  .leftText
+    margin-left: 20px
+    h5
+      padding-top: 20px
+      color: #888
+    h1
+      span
+        margin-left: 20px
+      .nightText
+        display: none
+    p
+      font-weight: 900
+      letter-spacing: 1px
+      font-size: 13px
+      color: #888
+
+  .building
+    position: absolute
+    bottom: 5em
+    right: 0
+    display: flex
+    +size(90%,100%)
+
+    .anusawari
+      flex: 4
+      +flex(center,flex-end)
+    .bigSwing
+      flex: 1
+.temple
+  bottom: 0
+  z-index: 10
+  width: 300px
+  height: auto
+  position: relative
+  +flex(center,center,column)
+  +abpos
+
+  .temTop
+    flex-direction: column
+    display: flex
+    align-items: center
+    justify-content: center
+    +size(75px)
+
+    .halfCirTop
+      background-color: $colorTemTop
+      position: relative
+      +size(12px,12px,0 0 6px 6px)
+
+      &:before
+        content: ""
+        display: block
+        background-color: $colorTemTop
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: -4px
+        +size(20px,8px)
+
+    .halfCirMiddle
+      background-color: $colorTemTop
+      // position: absolute
+      position: relative
+      +size(36px,36px,0 0 18px 18px)
+
+      &:before
+        content: ""
+        display: block
+        background-color: $colorTemTop
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        +size(120%,5px)
+
+    .halfCirBottom
+      background-color: $colorTemTop
+      position: absolute
+      bottom: 0
+      +size(24px,24px,12px 12px 0 0)
+
+  .temMain
+    +size(300px,200px)
+    +flex(center,flex-end)
+    .part1
+      background-color: $colorTemBottomLight
+      +size(36px,80px,18px 18px 0 0)
+      +flex
+
+      .pillar
+        border-top: solid 5px #fff
+        border-bottom: solid 5px #fff
+        background-color: $colorTemMainYellow
+        +size(100%,40%)
+
+    .part2
+      background-color: $colorTemMainWhite
+      +size(35px,170px,20px 0 0 0)
+      +flex(flex-end,center,column)
+      +window(25px,30px,$colorWindow)
+      .door
+        //background-color: red
+        +door
+        &:before
+          right: 0
+        &:after
+          right: 0
+      &:after
+        +stone(150%,30px)
+    .part3
+      border-radius: 15px 0 0 0
+      +partTopBottom(15px 0 0 0)
+
+      .partBottom
+        &:before
+          right: 0
+    .part4
+      border: 6px solid $colorTemMainBorder
+      box-sizing: border-box
+      background-color: $colorTemMainWhite
+      +size(60px,200px,5% 5% 0 0)
+      +flex(flex-end,center,column)
+      +window(40px,40px,$colorWindow)
+
+      &:after
+        +stone(180%,20px)
+
+      .door
+        background-color: $colorDoorBrown
+        +size(80%,120px)
+        +flex(center,center,column)
+
+        .doorTop
+          padding-top: 5px
+          background-color: $colorDoorRed
+          +size(100%,10%)
+          +flex(space-evenly,flex-start)
+
+          .sCir
+            background-color: $colorDoorYellow
+            +size(5px,5px,50%)
+
+        .doorBottom
+          background-color: $colorDoorRed
+          bottom: 0px
+          +size(90%,80%)
+          //position: absolute
+          +flex
+          .handle
+            top: -10px
+            +size(2px,50%)
+
+            &:before
+              border-radius: 50%
+              position: absolute
+              top: 40%
+              left: -15px
+              +fakeItem(8px,8px,0,$colorDoorYellow)
+
+            &:after
+              background-color: #222
+              border-radius: 50%
+              position: absolute
+              top: 40%
+              right: -15px
+              +fakeItem(8px,8px,0,$colorDoorYellow)
+
+    .part5
+      border-radius: 0 15px 0 0
+      +partTopBottom(0 15px 0 0)
+
+    .part6
+      background-color: $colorTemMainWhite
+      +size(35px,170px,0 20px 0 0)
+      +flex(flex-end,center,column)
+      +window(25px,30px,$colorWindow)
+
+      &:after
+        +stone(150%,30px)
+      .door
+        +door
+        &:before
+          left: 0
+        &:after
+          left: 0
+  .temBottom
+    +size(100%)
+    .stair
+      border-top: solid 10px $colorTemBottomDark
+      border-bottom: solid 10px $colorTemBottomDark
+      background-color: $colorTemBottomLight
+      +size(120%,25%)
+      +abpos
+      &:before
+        top: -150%
+        +fakeItem(90%,10px,0,$colorTemBottomLight)
+        +abpos
+
+      &:after
+        bottom: -150%
+        background-color: $colorTemBottomLight
+        +fakeItem(110%,10px)
+        +abpos
+
+//製作勝利紀念碑的葉子  ////////////////////////////////////////////
+$wallGreyLight: #D2D3D8
+$wallGreyM: #BCC4CC
+$wallGreyDark: #A1A6B1
+@mixin wall($deg:-35deg)
+  //+size(150px,320px)
+  position: absolute
+  bottom: 0
+  .wallTop
+    background-color: $wallGreyLight
+    box-sizing: border-box
+    overflow: hidden
+    +size(100%,76%)
+
+    .lights
+      position: absolute
+      top: 0
+      +size(100%)
+      +flex(space-evenly,center,column)
+
+      .light
+        background-color: $wallGreyDark
+        transform: rotate($deg)
+        +size(150%,15px)
+
+    &:before
+      +fakeItem(15px,100%,0,$wallGreyDark)
+  .wallBottom
+    border-left: solid 20px $wallGreyM
+    border-right: solid 20px $wallGreyM
+    border-top: solid 20px $wallGreyM
+    border-bottom: solid 40px $wallGreyM
+    box-sizing: border-box
+    position: absolute
+    background-color: $wallGreyLight
+    +size(130%,20%)
+    //border: solid 10px black
+
+    &:before
+      position: absolute
+      top: -100%
+      border-bottom: 5px solid $wallGreyDark
+      +fakeItem(130%,20px,5px,$wallGreyLight)
+
+    &:after
+      position: absolute
+      bottom: -160%
+      border-top: 5px solid $wallGreyDark
+      box-sizing: border-box
+      +fakeItem(110%,20px,0,$wallGreyLight)
+
+@mixin wallRight($r:0,$s:1,$ori:0 0)
+  //縮放後的原點
+  transform-origin: $ori
+  right: $r
+  transform: scale($s)
+  +size(225px,480px)
+  +wall
+
+  .wallTop
+    clip-path: polygon(0 0,20% 0,70% 30%,100% 100%,0 100%,0 0)
+    border-left: solid 20px $wallGreyLight
+  .wallBottom
+    right: 0
+    &:before
+      right: -30px
+    &:after
+      right: -20px
+
+@mixin wallLeft($r:0,$s:1,$ori:0 0)
+  left: $r
+  transform: scale($s)
+  //縮放後的原點
+  transform-origin: $ori
+  +size(225px,480px)
+  +wall(35deg)
+
+  .wallTop
+    clip-path: polygon(100% 0,80% 0,30% 30%,0 100%,100% 100%,100% 0)
+    border-right: solid 20px $wallGreyLight
+    &:before
+      position: absolute
+      right: 0
+  .wallBottom
+    &:before
+      left: -30px
+    &:after
+      left: -20px
+.wall1
+  z-index: 2
+  +wallRight(50px,0.9,100% 100%)
+
+.wall2
+  z-index: 1
+  +wallRight(180px,0.6,100% 100%)
+
+.wall3
+  z-index: 2
+  +wallLeft(50px,0.9,0 100%)
+
+.wall4
+  z-index: 1
+  +wallLeft(180px,0.6,0 100%)
+
+//右邊大鞦韆//////////////////////////////////////////////////////////
+@mixin borderSwing($l,$t:0,$r:$l,$c:black)
+  border-left: solid $l $c
+  border-right: solid $r $c
+  border-top: solid $t $c
+  box-sizing: border-box
+.bigSwing
+  margin-top: 20px
+  +flex(center,center,column)
+  .swingTop
+    +size(80%,20%)
+    +borderSwing(15px,15px,15px,$colorSwingRedLight)
+    &:before
+      background-color: $colorSwingRedLight
+      top: -30px
+      +fakeItem(140%,40px)
+      +abpos
+
+  .swingBottom
+    +size(80%,80%)
+    +borderSwing(15px,15px,15px,$colorSwingRedLight)
+    &:before
+      clip-path: polygon(100% 0,0 30%,0 100%,100% 100%,100% 0)
+      position: absolute
+      bottom: 0
+      left: -25px
+      +fakeItem(10px,40px,0,$colorSwingRedLight)
+
+    &:after
+      clip-path: polygon(0 0,100% 30%,100% 100%,0 100%,0 0)
+      position: absolute
+      bottom: 0
+      right: -25px
+      +fakeItem(10px,40px,0,$colorSwingRedLight)
+
+//shake swing///////////////////////////////
+.bigSwing
+  animation: jump 2s 4s 3
+  .swingBottom
+    +flex(center,flex-start)
+    .swingText
+      opacity: 0
+
+  @keyframes jump
+    0%
+    top: 0
+    50%
+    top: -5%
+    100%
+    top: 0
+  &:hover
+    //animation-play-state: paused
+    animation: jump 0 both
+    top: 0
+    .swingBottom
+      .swingText
+        opacity: 1
+        background-color: rgba(#fff,0.4)
+
+//stars/////////////////////////////////////
+.stars
+  position: absolute
+  +size(100%,30%)
+  @for $i from 1 through 15
+    .star#{$i}
+      left: random()*100%
+      top: random()*100%
+      background-color: #fff
+      position: absolute
+      opacity: 0
+      +size(4px,4px,50%)
+
+//boatNoodle//////////////////////////////////////
+
+.text
+  color: #888
+.sence
+  transition: 5s
+.leftText
+  h5, h1, p, .explanation ul li
+    transition: 2s
+[class^='wall'], .temMain *, .clouds
+    transition: 2s
+.swingText
+  transition: 0.5s
+//控制動畫////////////////////////////////////
+@keyframes textAppear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes shake
+  0%
+    transform: rotate(30deg)
+  50%
+    transform: rotate(-30deg)
+  100%
+    transform: rotate(30deg)
+
+@for $i from 1 through 4
+  .exText
+    li
+      opacity: 0
+      &:nth-child(#{$i})
+        animation: textAppear 2s $i*0.7s both
+
+//要記得加上+
+// input:checked +
+.sence.checked
+  background-position: 0 0
+  .clouds
+    opacity: 0
+    transition: 2s
+  .boatNoodle
+    bottom: 10px
+    animation: boatnoodle 3s 4s forwards
+    @keyframes boatnoodle
+      0%
+        bottom: 10px
+        transform: scale(0.5)
+      50%
+        bottom: 60%
+      75%
+        left: 30%
+        bottom: 45%
+        z-index: 10
+      90%
+        left: 2%
+        bottom: 30%
+        z-index: 10
+        transform: scale(0.6)
+      100%
+        left: 2%
+        bottom: 30%
+        z-index: 10
+        transform: scale(0.5)
+      a
+        display: block
+  .stars
+    @for $i from 1 through 15
+      .star#{$i}
+        animation: textAppear 2s -$i*0.1s infinite alternate
+  .leftText
+    .explanation
+      ul
+        animation: textAppear 2s reverse both
+    h1
+      color: #fff
+      .nightText
+        display: block
+        transition: 2s
+      .dayText
+        display: none
+        transition: 2s
+  .building
+    .anusawari
+      .halfCirTop
+        animation: shake 1s 2 forwards
+
+      .temMain
+        *
+          box-shadow: 0 0 15px rgba(white,0.7)
+          transition-delay: 2s
+      .wall1
+        right: 0
+        transition-delay: 1.5s
+      .wall2
+        right: 130px
+
+      .wall3
+        left: 0
+        transition-delay: 1.5s
+      .wall4
+        left: 130px
+      //.light
+        background-color: #fff
+      .wallTop
+        background-color: lighten($colorWallGreyLight,5%)
+        border-left-color: lighten($colorWallGreyLight,5%)
+        border-right-color: lighten($colorWallGreyLight,5%)
+      .wallBottom
+        background-color: lighten($colorWallGreyLight,5%)
+        &:before, &:after
+          background-color: lighten($colorWallGreyLight,5%)
+    .bigSwing
+      .swingTop, .swingBottom
+        box-shadow: 0 0 20px rgba(white,1)
+        transition: 2s

@@ -1,0 +1,208 @@
+$red: #A50F2F
+$yellow: #FEC806
+$green: #3D5E41
+$blue: #0264C9
+$body: #EFF5EF
+$head: #E2D486
+$bgc : #0b3182
+@mixin size($w,$h:$w,$bdrs:0)
+  width: $w
+  height: $h
+  border-radius: $bdrs
+@mixin poabs()
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+*
+  // border: 1px solid #000
+
+.loadingPanel
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background-color: $bgc
+  position: fixed
+  top: 0
+#giant
+  +size(300px,300px,40px)
+  transform: scale(0.5)
+  box-shadow: 0 10px 10px rgba(#222,0.8)
+  animation: waiting 2s infinite
+  @keyframes waiting
+    0%
+      transform: scale(0.5) translate(-20px,0)
+    50%
+      transform: scale(0.5) translate(20px,0)
+    100%
+      transform: scale(0.5) translate(-20px,0)
+  
+  .head
+    height: 20%
+    border-radius: 40px 40px 0 0 
+    display: flex
+    flex-direction: column
+    align-items: center
+    .layer
+      height: 30%
+      // border: 2px solid #000
+      border-radius: 100px 100px 0 0
+      background-color: $head
+    .layer1
+      width: 50%
+    .layer2
+      width: 70%
+    .layer3
+      width: 100%
+  .body
+    // border: 2px solid #000
+    height: 80%
+    border-radius: 0 0 40px 40px
+    position: relative
+    background-color: $body
+    .header
+      height: 15%
+      +size(100%,15%)
+      position: absolute
+      top: 10%
+      background-color: $yellow
+      border: 2px solid #000
+      .flower
+        position: relative
+        +size(50px)
+        transform: translate(-50%,25%) rotate(45deg)
+        top: -50%
+        left: 50%
+        .leave
+          +size(50%,50%,20% 50% 50% 50%)
+          position: absolute
+          transform: rotate(0deg)
+          background-color: $yellow
+          border: 2px solid #000
+        .leave2
+          right: 0
+          transform: rotate(90deg)
+        .leave3
+          right: 0
+          bottom: 0
+          transform: rotate(180deg)
+        .leave4
+          bottom: 0
+          transform: rotate(270deg)
+        .center
+          +size(50%,50%,50%)
+          background-color: #f24
+          border: 3px solid #000
+          +poabs()
+          
+    .face
+      +size(100%,70%)
+      position: absolute
+      bottom: 0
+      .eye
+        background-color: #fff
+        position: absolute
+        border: 6px solid $green
+        +size(60px)
+        border-radius: 50%
+        &:before
+          content: ''
+          display: block
+          +size(60%,60%,50%)
+          +poabs()
+          border: 5px solid $blue
+          background-color: #000
+        &:after
+          content: ''
+          display: block
+          +size(30%,30%,50%)
+          background-color: #fff
+          +poabs()
+          left: 75%
+          top: 35% 
+          animation: waiting2 2s infinite
+          @keyframes waiting2
+            0%
+              transform: translate(-10px,0)
+            50%
+              transform: translate(-30px,0)
+            100%
+              transform: translate(-10px,0)
+      .left
+        left: 20%
+      .right
+        right: 20%
+      .nose
+        position: absolute
+        +size(30%,30%,50% 50% 0 0)
+        left: 50%
+        top: 35%
+        transform: translate(-50%,-50%)
+        background-color: #fff
+        border: 3px solid #000
+        // border-radius: 20px 20px 0 0 
+      .coverMouth
+        +size(80%,45%,0 0 50% 50%)
+        position: absolute
+        bottom: 5px
+        left: 50%
+        transform: translateX(-50%)
+        background-color: #fff
+        
+        border: 10px solid $green
+        // box-shadow: 0 0 10px $red
+        .mouth
+          +size(90%,80%,0 0 50% 50%)
+          background-color: $red
+          border: 3px solid #000
+          display: flex
+          overflow: hidden
+          +poabs()
+          &:after
+            content: ''
+            display: block
+            
+          .teeth
+            flex: 1
+            border: 1px solid #000
+            background-color: #fff
+            +size(10px,10px)
+            // position: relative
+            &:after
+              content: ''
+              display: block
+              flex: 1
+              border: 1px solid #000
+              background-color: #fff
+              +size(100%,15px)
+              position: absolute
+              bottom: 0
+          .big
+            +size(18px,30px,0 0 0 100%)
+            position: absolute
+            left: 22px
+            top: 5px
+            background-color: #fff
+          .big2
+            left: initial
+            right: 22px
+            border-radius: 0 0 100% 0
+.lights
+  .light
+    +size(30px,30px,50%)
+    background-color: hsl(30,60%,60%)
+    display: inline-block
+    margin: 10px
+    animation: show 2s infinite
+    @keyframes show
+      50%
+        background-color: rgba(#f24,0.5)
+
+
+
+
+
+

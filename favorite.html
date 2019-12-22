@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻 THAISKR | 電影最愛</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto+Mono|Trirong&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/movie.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <!-- jumbotron -->
+  <div class="mt-5 pt-5 jumbotron bg-dark text-white d-flex flex-column align-items-center">
+    <h3 class="d-md-block m-5">
+      <i class="fas fa-video text-white"></i>
+      泰國電影蒐藏清單
+    </h3>
+  </div>
+  <!-- favorite-panel -->
+  <div class="container mt-5 d-flex justify-content-center align-items-center flex-column">
+    <div class="row" id="favorite-panel">
+
+    </div>
+  </div>
+
+  <!-- modal另外放在外面 -->
+  <!-- Modal -->
+  <div class="modal fade justify-content-center align-items-center" id="detailModal" tabindex="-1" role="dialog"
+    aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog m-0" role="document">
+      <div class="modal-content">
+        <div class="modal-body row p-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="left col-md-5 d-none d-md-flex align-items-start p-0">
+            <div id="image"></div>
+            <br>
+            <div id="genres"></div>
+          </div>
+          <div class="right col-12 col-md-7 p-0">
+            <div class="datepopu p-3">
+              <h3 class="modal-title" id="detailModalLabel">Modal title</h3>
+              <i class="fas fa-calendar-week"></i>
+              <span id="release_date"></span>
+              <i class="far fa-thumbs-up"></i>
+              <span id="popularity"></span>
+            </div>
+            <!-- normal content -->
+            <div id="content" class="col-12 pl-5 mb-3">
+            </div>
+            <!-- cast content -->
+            <div id="castList" class="row p-2 d-none">
+
+            </div>
+
+            <!-- switch cast and normal content -->
+            <botton id="castBtn" class="btn btn-danger float-right mb-3 mr-2">卡司</botton>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- loading interface -->
+  <div class="loadingPanel"></div>
+
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+    $(".loadingPanel").load("./layout/loading.html")
+  </script>
+  <!-- include js library -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="./js/favorite.js"></script>
+</body>
+
+</html>

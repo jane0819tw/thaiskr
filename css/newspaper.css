@@ -1,0 +1,387 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html, body {
+  margin: 0;
+  height: auto;
+  background-color: #b23d13;
+}
+
+#app {
+  width: 100%;
+}
+
+#screenPanel {
+  height: 90vh;
+}
+
+#newsPieces {
+  position: relative;
+  width: 700px;
+  height: 400px;
+}
+
+#newsPieces .news {
+  background-color: #eee;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 1s, -webkit-transform-origin 0s;
+  transition: 1s, -webkit-transform-origin 0s;
+  transition: 1s, transform-origin 0s;
+  transition: 1s, transform-origin 0s, -webkit-transform-origin 0s;
+  cursor: -webkit-grab;
+  cursor: grab;
+  opacity: 1;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+#newsPieces .news:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#newsPieces .news .image {
+  width: 100%;
+  height: 70%;
+  background-color: #555;
+  background-blend-mode: hard-light;
+}
+
+#newsPieces .news .image.cover {
+  background-color: transparent;
+}
+
+#newsPieces .news .date {
+  color: #888;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+#newsPieces .news .date .topic {
+  border-radius: 10px;
+  background-color: #f43f4e;
+  color: #fff;
+  padding: 5px;
+}
+
+#newsPieces .news .page {
+  border-radius: 50%;
+  background-color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: brown;
+  font-weight: 900;
+  width: 30px;
+  height: 30px;
+}
+
+#newsPieces .news .title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#newsPieces .news h5 {
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: #32636A;
+}
+
+#newsPieces .news .source a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #bbb;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#newsPieces .news .source a:hover {
+  color: #888;
+}
+
+#newsPieces .news.openLeft {
+  -webkit-transform: rotate3d(1, -1, 0, 90deg);
+          transform: rotate3d(1, -1, 0, 90deg);
+  opacity: 0.5;
+  width: 0%;
+}
+
+.news0 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-2.5deg);
+          transform: rotate(-2.5deg);
+}
+
+.news1 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-2.2deg);
+          transform: rotate(-2.2deg);
+}
+
+.news2 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-1.9deg);
+          transform: rotate(-1.9deg);
+}
+
+.news3 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-1.6deg);
+          transform: rotate(-1.6deg);
+}
+
+.news4 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-1.3deg);
+          transform: rotate(-1.3deg);
+}
+
+.news5 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+}
+
+.news6 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-0.7deg);
+          transform: rotate(-0.7deg);
+}
+
+.news7 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-0.4deg);
+          transform: rotate(-0.4deg);
+}
+
+.news8 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-0.1deg);
+          transform: rotate(-0.1deg);
+}
+
+.news9 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(0.2deg);
+          transform: rotate(0.2deg);
+}
+
+.news10 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(0.5deg);
+          transform: rotate(0.5deg);
+}
+
+.news11 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(0.8deg);
+          transform: rotate(0.8deg);
+}
+
+.news12 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(1.1deg);
+          transform: rotate(1.1deg);
+}
+
+.news13 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(1.4deg);
+          transform: rotate(1.4deg);
+}
+
+.news14 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(1.7deg);
+          transform: rotate(1.7deg);
+}
+
+.news15 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+}
+
+.news16 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(2.3deg);
+          transform: rotate(2.3deg);
+}
+
+.news17 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(2.6deg);
+          transform: rotate(2.6deg);
+}
+
+.news18 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(2.9deg);
+          transform: rotate(2.9deg);
+}
+
+.news19 {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(3.2deg);
+          transform: rotate(3.2deg);
+}
+
+#selPanel .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#selPanel .btn-group label {
+  border-radius: 10px;
+}
+
+#selPanel .locate {
+  background-color: #ff2244;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+#selPanel .locate i {
+  font-size: 20px;
+  width: 20%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#selPanel .locate:hover {
+  color: #fff;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+#dataPanel #hotPanel {
+  width: 100%;
+  max-width: 900px;
+}
+
+#dataPanel #hotPanel .hot {
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#dataPanel #hotPanel .hot:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: 0 0 5px #fff;
+          box-shadow: 0 0 5px #fff;
+}
+
+#dataPanel #hotPanel .hot .image {
+  width: 100%;
+  height: 200px;
+  background-color: #555;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#dataPanel #hotPanel .hot .title {
+  position: absolute;
+  font-weight: 800;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(34, 34, 34, 0.7);
+  padding: 3px;
+  color: #fff;
+}
+
+#dataPanel ul {
+  width: 100%;
+  max-width: 900px;
+}
+
+#dataPanel ul li {
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+#dataPanel ul li:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+#dataPanel ul li .image {
+  height: 100px;
+  width: 100px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background-color: #555;
+  border-radius: 10px;
+}
+
+#dataPanel ul li .content {
+  width: calc(100% - 100px);
+}
+
+#dataPanel ul li .content .title {
+  font-size: 1.2em;
+}
+
+#dataPanel ul li .content .date {
+  text-align: right;
+}
+
+.modal-dialog {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+}
+
+#giant .body {
+  background-color: #32636A;
+}
+/*# sourceMappingURL=newspaper.css.map */

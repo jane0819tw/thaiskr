@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻　THAISKR | BTS路線估價</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto+Mono|Trirong&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="./css/btsRoute.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <div id="app" class="row p-0">
+    <div id="map" class="col-12 col-md-6 p-0">
+      <svg id="svg" width="600" height="400" viewBox="0 0 600 600">
+      </svg>
+      <select name="" id="language">
+        <option value="bts_station_name_chi_name">中文名</option>
+        <option value="bts_station_name_thai_name">泰文名</option>
+        <option value="bts_station_name_eng_name" selected>英文名</option>
+      </select>
+    </div>
+    <div id="infoPanel" class="col-12 col-md-6 p-5">
+      <div class="pic"></div>
+      <h1><i class="mr-3 fas fa-bus-alt"></i>BTS 交通費用計算</h1>
+      <P>去泰國自由行到底該不該購買BTS一日券呢?<br>點擊BTS站來預估這趟旅程的交通費用吧!</P>
+
+      <div id="schedule">
+
+      </div>
+      <button id="addSchedule" class="my-2 btn btn-dark">+</button>
+      <button id="saveSchedule" class="my-2 btn btn-info" data-toggle="modal" data-target="#myModal">
+        <i class="fas fa-save"></i>
+      </button>
+
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal"" data-backdrop=" static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          將行程保存至紀錄!
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <script src="./js/btsRoute.js"></script>
+
+</body>
+
+</html>

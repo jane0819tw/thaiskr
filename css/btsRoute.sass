@@ -1,0 +1,141 @@
+*
+  // border: 1px solid #000
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體'
+  html,body
+    margin: 0
+    min-height: 100vh
+    width: 100%
+    background-color: #000
+#map
+  position: relative
+  background-color: #555
+  select
+    position: absolute
+    left: 40px
+    top: 20px
+    background-color: transparent
+    outline: none
+    border-radius: 5px
+    color: #fff
+    border: 1px solid #fff
+    padding: 5px
+    font-weight: 800
+    option
+      color: #000
+  svg
+    max-width: 100%
+    background-color: #555
+    max-height: 95vh
+#app
+  display: flex
+  height: 100%
+
+.nowSche
+  background-color: orange
+
+#infoPanel
+  background-color: #e8f2ea
+  position: relative
+  overflow: hidden
+  .pic
+    position: absolute
+    background-image: url(../img/rabbitCard.jpg)
+    mix-blend-mode: overlay
+    background-size: cover
+    bottom: 20px
+    left: 0
+    width: 20vw
+    height: 40vw
+    min-width: 250px
+    min-height: 400px
+    transform: rotate(20deg)
+    z-index: 0
+  h1
+    font-size: 30px
+  >*
+    z-index: 2
+    position: relative
+  *
+    font-weight: 800
+
+  #schedule
+    z-index: 2
+    .sche
+      border: 3px solid #ddd
+      box-shadow: 0 0 10px #fff
+      background-color: #fff
+      padding: 5px
+      .action
+        h3
+          font-size: 20px
+          font-weight: 900
+          border-bottom: 3px solid #000
+          transition: 0.2s
+          cursor: pointer
+          display: inline-block
+          &:hover
+            background-color: #888
+            color: #fff
+
+        i
+          cursor: pointer
+          transition: 0.2s
+          border-radius: 50%
+          &.minus
+            color: #f43f4e
+            float: right
+      ul
+        li.trip
+          line-height: 30px
+          border: none
+          border-bottom: 1px solid #000
+          border-radius: 0
+
+          >*
+            vertical-align: middle
+            font-size: 12px
+          span
+            word-break: break-all
+          input
+            outline: none
+            -webkit-appearance: none
+            -moz-appearance: none
+          .station
+            border-left: 5px solid orange
+          .price
+            float: right
+          .delete
+            cursor: pointer
+            transition: 0.2s
+            float: right
+            vertical-align: middle
+            &:hover
+              color: #f24
+        li:last-child
+          border-bottom: 3px solid brown
+      .result
+        line-height: 30px
+        .smallTotal
+          display: inline-block
+          text-align: right
+          float: right
+        .message
+          display: inline-block
+        button
+          a
+            text-decoration: none
+            color: #000
+    .totalInfo
+      height: 40px
+      >*
+        display: inline-block
+        float: right
+      button
+        a
+          text-decoration: none
+          color: #fff
+      .total
+        border-top: 4px solid #000
+
+  #addSchedule
+    // float: right

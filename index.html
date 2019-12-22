@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻　THAISKR </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Trirong&display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <!-- <link rel="stylesheet" href="css/loading.css"> -->
+  <link rel="stylesheet" href="css/anusawari.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body id="skrollr-body">
+  <!-- navigation -->
+  <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <label for="" id="anusawari" class="mt-5">
+
+  </label>
+  <div class="jumbotron px-0" data-bottom-top="transform: translateY(-50px);" data-center="transform: translateY(0px);">
+    <h1 class="display-4">網站服務</h1>
+    <hr>
+    <div class="row" id="items">
+      <div class="col-md-6 col-12 p-3 d-flex justify-content-center">
+        <div class="item p-3" data-bottom-top="transform: scale(1.2) translate(-20px,50px);"
+          data-center="transform: transform: scale(1) translate(0px,0px);">
+          <h3>找<span>影視</span></h3>
+          <hr>
+          <ul>
+            <li><span>泰劇搜尋</span>幫你找到你想看的泰劇。</li>
+            <li><span>泰國電影搜尋</span>找到那些電影還有演員清單並加到我的最愛蒐藏。</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-12 p-3 d-flex justify-content-center">
+        <div class="item p-3" data-bottom-top="transform: scale(1.2) translate(-20px,50px);"
+          data-center="transform: transform: scale(1) translate(0px,0px);">
+          <h3>學<span>泰文</span></h3>
+          <hr>
+          <ul>
+            <li><span>泰文鍵盤</span>練習鍵盤打泰文字並發音。</li>
+            <li><span>泰國即時新聞</span>顯示泰國最新新聞。</li>
+            <li><span>泰字連連看</span>複習字母單字。</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-12 p-3 d-flex justify-content-center">
+        <div class="item p-3" data-bottom-top="transform: scale(1.2) translate(-20px,50px);"
+          data-center="transform: transform: scale(1) translate(0px,0px);">
+          <h3>看<span>地圖</span></h3>
+          <hr>
+          <ul>
+            <li><span>即時天氣</span>顯示未來五天的城市天氣，提供釘選功能選定載入天氣。</li>
+            <li><span>BTS估價</span>讓自由行的你來預估BTS花費，決定要不要購買一日票券。</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-12 p-3 d-flex justify-content-center">
+        <div class="item p-3" data-bottom-top="transform: scale(1.2) translate(-20px,50px);"
+          data-center="transform: transform: scale(1) translate(0px,0px);">
+          <h3>聽<span>泰歌</span></h3>
+          <hr>
+          <ul>
+            <li><span>泰國歌曲</span>載入youtube歌曲清單，唱盤畫面讓你體驗當DJ!</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- draw panel -->
+
+
+  <div id="panel">
+    <canvas id="mycanvas" data-bottom-top="transform: scale(1.5) translate(-20px,50px);"
+      data-center="transform: transform: scale(1) translate(0px,0px);">
+
+    </canvas>
+    <button id="start" class="btn-lg btn btn-outline-light">滑動滑鼠來產生你的泰文字吧</button>
+    <div class="result"></div>
+
+  </div>
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+    $("#anusawari").load("./layout/anusawari.html")
+    // $(".loadingPanel").load("./layout/loading.html")
+  </script>
+  <!-- script -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+  <!-- <script src="./js/quotesData.js"></script> -->
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

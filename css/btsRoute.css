@@ -1,0 +1,208 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+* html, * body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+}
+
+#map {
+  position: relative;
+  background-color: #555;
+}
+
+#map select {
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px;
+  font-weight: 800;
+}
+
+#map select option {
+  color: #000;
+}
+
+#map svg {
+  max-width: 100%;
+  background-color: #555;
+  max-height: 95vh;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.nowSche {
+  background-color: orange;
+}
+
+#infoPanel {
+  background-color: #e8f2ea;
+  position: relative;
+  overflow: hidden;
+}
+
+#infoPanel .pic {
+  position: absolute;
+  background-image: url(../img/rabbitCard.jpg);
+  mix-blend-mode: overlay;
+  background-size: cover;
+  bottom: 20px;
+  left: 0;
+  width: 20vw;
+  height: 40vw;
+  min-width: 250px;
+  min-height: 400px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  z-index: 0;
+}
+
+#infoPanel h1 {
+  font-size: 30px;
+}
+
+#infoPanel > * {
+  z-index: 2;
+  position: relative;
+}
+
+#infoPanel * {
+  font-weight: 800;
+}
+
+#infoPanel #schedule {
+  z-index: 2;
+}
+
+#infoPanel #schedule .sche {
+  border: 3px solid #ddd;
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+  background-color: #fff;
+  padding: 5px;
+}
+
+#infoPanel #schedule .sche .action h3 {
+  font-size: 20px;
+  font-weight: 900;
+  border-bottom: 3px solid #000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#infoPanel #schedule .sche .action h3:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+#infoPanel #schedule .sche .action i {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+#infoPanel #schedule .sche .action i.minus {
+  color: #f43f4e;
+  float: right;
+}
+
+#infoPanel #schedule .sche ul li.trip {
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+
+#infoPanel #schedule .sche ul li.trip > * {
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+#infoPanel #schedule .sche ul li.trip span {
+  word-break: break-all;
+}
+
+#infoPanel #schedule .sche ul li.trip input {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#infoPanel #schedule .sche ul li.trip .station {
+  border-left: 5px solid orange;
+}
+
+#infoPanel #schedule .sche ul li.trip .price {
+  float: right;
+}
+
+#infoPanel #schedule .sche ul li.trip .delete {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  float: right;
+  vertical-align: middle;
+}
+
+#infoPanel #schedule .sche ul li.trip .delete:hover {
+  color: #f24;
+}
+
+#infoPanel #schedule .sche ul li:last-child {
+  border-bottom: 3px solid brown;
+}
+
+#infoPanel #schedule .sche .result {
+  line-height: 30px;
+}
+
+#infoPanel #schedule .sche .result .smallTotal {
+  display: inline-block;
+  text-align: right;
+  float: right;
+}
+
+#infoPanel #schedule .sche .result .message {
+  display: inline-block;
+}
+
+#infoPanel #schedule .sche .result button a {
+  text-decoration: none;
+  color: #000;
+}
+
+#infoPanel #schedule .totalInfo {
+  height: 40px;
+}
+
+#infoPanel #schedule .totalInfo > * {
+  display: inline-block;
+  float: right;
+}
+
+#infoPanel #schedule .totalInfo button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#infoPanel #schedule .totalInfo .total {
+  border-top: 4px solid #000;
+}
+/*# sourceMappingURL=btsRoute.css.map */

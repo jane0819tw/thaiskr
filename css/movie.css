@@ -1,0 +1,315 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html,
+body {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+html > .container,
+body > .container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.jumbotron h3 {
+  font-size: 25px;
+}
+
+#search-panel {
+  max-width: 700px;
+}
+
+#search-panel .left {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#search-panel .left input[name="genre"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #d6a58f;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 3px solid #C8876A;
+  padding-right: 10px;
+}
+
+#search-panel .left input[name="genre"]:checked {
+  background-color: #703f29;
+}
+
+#search-panel .right {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#data-panel,
+#favorite-panel {
+  max-width: 900px;
+  width: 100%;
+}
+
+#data-panel .movie-box,
+#favorite-panel .movie-box {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  position: relative;
+}
+
+#data-panel .movie-box i,
+#favorite-panel .movie-box i {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2em;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#data-panel .movie-box i:hover,
+#favorite-panel .movie-box i:hover {
+  font-size: 2.2em;
+}
+
+#data-panel .movie-box .fa-minus-circle,
+#favorite-panel .movie-box .fa-minus-circle {
+  right: .2em;
+  top: .8em;
+  left: initial;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#data-panel .movie-box .like,
+#favorite-panel .movie-box .like {
+  color: #f24;
+}
+
+#data-panel .movie-box img,
+#favorite-panel .movie-box img {
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+          box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+#data-panel .movie-box .darken,
+#favorite-panel .movie-box .darken {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
+  text-align: center;
+}
+
+#data-panel .movie-box .darken:hover,
+#favorite-panel .movie-box .darken:hover {
+  opacity: 0;
+}
+
+#data-panel .movie-box .comingMovie,
+#favorite-panel .movie-box .comingMovie {
+  position: absolute;
+  z-index: 4;
+  color: #f24;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+  border: 5px solid #f24;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.none {
+  display: none;
+}
+
+.special {
+  color: yellow;
+}
+
+.modal-dialog {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+}
+
+.modal-dialog .modal-content {
+  max-height: 95vh;
+  max-width: 95vw;
+}
+
+.modal-dialog .modal-body {
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.modal-dialog .modal-body .close {
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  z-index: 2;
+}
+
+.modal-dialog .modal-body .left #image {
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+}
+
+.modal-dialog .modal-body .left #genres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 1em;
+}
+
+.modal-dialog .modal-body .left #genres .genre {
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.modal-dialog .modal-body .right {
+  background-color: #e4b8af;
+}
+
+.modal-dialog .modal-body .right .datepopu {
+  font-size: 1em;
+}
+
+.modal-dialog .modal-body .right .datepopu #detailModalLabel {
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.modal-dialog .modal-body .right .datepopu span {
+  margin-right: 2em;
+}
+
+.modal-dialog .modal-body .right .datepopu i {
+  color: #1026ce;
+  line-height: 1.6em;
+  margin-right: 1em;
+}
+
+.modal-dialog .modal-body .right #content #overview {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.modal-dialog .modal-body .right #castList .cast {
+  display: inline-block;
+}
+
+.modal-dialog .modal-body .right #castList .cast .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.modal-dialog .modal-body .right #castList .cast p {
+  word-break: break-word;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.modal-dialog .modal-body .right #castList .cast .name {
+  font-size: 0.6em;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    max-width: 700px;
+  }
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #555;
+  border: 1px solid #fff;
+}
+
+.page-item.disabled .page-link {
+  color: #868e96;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #555;
+  border-color: #718393;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #A50F2F;
+  border-color: #fff;
+}
+
+.page-link:focus, .page-link:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #A50F2F;
+  border-color: #fff;
+}
+/*# sourceMappingURL=movie.css.map */

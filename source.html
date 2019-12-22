@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻 THAISKR | 來源</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto+Mono|Trirong&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/source.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <div class="row mt-3 pt-5" id="main">
+    <div class="col-md-4 col-12">
+      <div id="panel" class="mt-5 d-flex justify-content-center align-items-center flex-column">
+        <h1>網站資料來源</h1>
+        <ul id="sourceList" class="list-group">
+
+        </ul>
+      </div>
+    </div>
+    <div class="right col-md-3 col-12 justify-content-start d-flex align-items-center flex-column">
+      <div id="giant">
+        <div class="head">
+          <div class="layer layer1"></div>
+          <div class="layer layer2"></div>
+          <div class="layer layer3"></div>
+        </div>
+        <div class="body">
+          <div class="header">
+            <div class="flower">
+              <div class="leave leave1"></div>
+              <div class="leave leave2"></div>
+              <div class="leave leave3"></div>
+              <div class="leave leave4"></div>
+              <div class="center"></div>
+            </div>
+          </div>
+          <div class="face">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="coverMouth">
+              <div class="mouth">
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="teeth"></div>
+                <div class="big"></div>
+                <div class="big big2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mb-5">我是yo ย 的 ยักษ์ !
+        <br>應該認識我了吧!<br>現在我是<b>紅色</b>，</br>看到你我就臉紅了，<br>我也不知道我是在生氣還是害羞，<br>我的創造者叫我多講一點話，<br>來吧你有甚麼話想跟我說嗎?<br>說我很可愛也可以喔~
+      </p>
+
+    </div>
+    <div class="p-0 col-md-5 col-12 justify-content-center d-flex align-items-center flex-column">
+      <div id="card">
+        <form action="https://formspree.io/xnqjnlqr" method="POST">
+          <h1>讓我多了解你吧!</h1>
+          <input name="name" type="text" placeholder="請輸入姓名" />
+          <input name="nickname" type="text" placeholder="請輸入小名/泰文名" required="" />
+          <div class="gender">
+            <input name="gender" type="radio" value="male" checked="checked" /><i class="fas fa-mars"></i>
+            <input name="gender" type="radio" value="female" /><i class="fas fa-venus"></i>
+            <input name="gender" type="radio" value="transgender" /><i class="fas fa-transgender-alt"></i>
+          </div>
+          <input type="email" required="" placeholder="請輸入電子信箱" />
+          <textarea name="comment" rows="4" placeholder="如何得知THAISKR、想和泰時刻說的話、希望有甚麼功能、使用問題..."></textarea>
+          <h3>有興趣的主題</h3>
+          <div class="interest">
+            <input name="inetrest" type="checkbox" value="eat" />
+            <label>泰食客</label>
+            <input name="inetrest" type="checkbox" value="travel" />
+            <label>泰自遊</label>
+            <input name="inetrest" type="checkbox" value="vocaburary" />
+            <label>泰簡單</label>
+            <input name="inetrest" type="checkbox" value="student" checked="checked" />
+            <label>泰學生</label>
+          </div>
+          <button>送出</button>
+          <input name="json" type="hidden" value="" />
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+    // $(".loadingPanel").load("./layout/loading.html")
+  </script>
+  <!-- include js library -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="./js/source.js"></script>
+
+
+</body>
+
+</html>

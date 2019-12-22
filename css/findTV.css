@@ -1,0 +1,718 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #f92f5e;
+}
+
+#app {
+  height: auto;
+  position: relative;
+  background-color: #f92f5e;
+}
+
+#app .jumbotron {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#app .jumbotron .grid {
+  width: 60%;
+  height: 15px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#6b4b18), color-stop(20%, #6b4b18), color-stop(20%, rgba(0, 0, 0, 0.3)), color-stop(70%, rgba(0, 0, 0, 0.3)), color-stop(70%, #6b4b18), to(#6b4b18));
+  background-image: linear-gradient(90deg, #6b4b18 0%, #6b4b18 20%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.3) 70%, #6b4b18 70%, #6b4b18 100%);
+  background-size: 20px 20px;
+}
+
+#app .jumbotron #tvshow {
+  width: 60%;
+  height: 70vh;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@-webkit-keyframes hide {
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes hide {
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes move {
+  50% {
+    width: 30%;
+    background-color: #a04d0e;
+  }
+  80% {
+    width: 30%;
+  }
+  100% {
+    width: 5%;
+    content: '';
+  }
+}
+
+@keyframes move {
+  50% {
+    width: 30%;
+    background-color: #a04d0e;
+  }
+  80% {
+    width: 30%;
+  }
+  100% {
+    width: 5%;
+    content: '';
+  }
+}
+
+#app .jumbotron #tvshow.hideLoading:before {
+  -webkit-animation: move 1s 1 0.8s forwards;
+          animation: move 1s 1 0.8s forwards;
+}
+
+#app .jumbotron #tvshow.hideLoading:after {
+  -webkit-animation: move 1s 1 .6s forwards;
+          animation: move 1s 1 .6s forwards;
+}
+
+#app .jumbotron #tvshow.hideLoading .loadingPanel {
+  -webkit-animation: hide 1s 1 forwards;
+          animation: hide 1s 1 forwards;
+}
+
+#app .jumbotron #tvshow:before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #a04d0e;
+  top: 0;
+  right: 0;
+}
+
+#app .jumbotron #tvshow:after {
+  display: block;
+  content: '';
+  text-align: center;
+  line-height: 400px;
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #a04d0e;
+  top: 0;
+  left: 0;
+}
+
+#app .jumbotron #tvshow #showlist {
+  height: 100%;
+  width: auto;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 0;
+}
+
+#app .jumbotron #tvshow #showlist .program {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 70%;
+  height: 70%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
+  padding: 1em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#app .jumbotron #tvshow #showlist .program:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+#app .jumbotron #tvshow #showlist .program:hover .poster {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#app .jumbotron #tvshow #showlist .program .poster {
+  width: 200px;
+  height: 100%;
+  position: relative;
+  top: -2em;
+  left: -2em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+#app .jumbotron #tvshow #showlist .program .info {
+  position: relative;
+}
+
+#app .jumbotron #tvshow #showlist .program .info h3 {
+  font-size: 1.5em;
+}
+
+#app .jumbotron #tvshow #showlist .program .info h4 {
+  font-size: 1.2em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#app .jumbotron #tvshow #showlist .program .info .genres .genre {
+  font-size: 1em;
+  border-radius: 5px;
+  font-size: 0.8em;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+}
+
+#app .jumbotron #tvshow #showlist .program .info span.episode,
+#app .jumbotron #tvshow #showlist .program .info span.season {
+  border-radius: 5px;
+  background-color: #ff8300;
+  padding: 5px;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  float: right;
+  margin-left: 5px;
+}
+
+#app .jumbotron #tvshow #showlist .program .info .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+
+#app .jumbotron #tvshow #showlist .program .info .bottom button {
+  float: right;
+}
+
+#app .jumbotron #tvshow #showlist .program .info .bottom i {
+  float: right;
+  font-size: 2em;
+  color: #888;
+}
+
+#app .jumbotron #tvshow .loadingPanel {
+  position: absolute;
+  cursor: initial;
+  z-index: 1;
+  background-color: #A50F2F;
+}
+
+#app .jumbotron #tvshow .loadingPanel #giant {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  cursor: pointer;
+}
+
+#app .jumbotron #tvshow .loadingPanel #giant.showBeside {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#app .jumbotron #tvshow .loadingPanel > p {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+#app .jumbotron #tvshow .loadingPanel .description {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+#app .jumbotron #castPanel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 100vw;
+  height: 75vh;
+  background-image: linear-gradient(20deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.5) 100%);
+  background-color: rgba(129, 129, 129, 0.3);
+}
+
+#app .jumbotron #castPanel .title i {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#app .jumbotron #castPanel .title i:hover {
+  color: rgba(255, 0, 0, 0.6);
+}
+
+#app .jumbotron #castPanel ul {
+  height: 80%;
+  overflow-y: auto;
+}
+
+#app .jumbotron #castPanel ul::-webkit-scrollbar {
+  width: 12px;
+}
+
+#app .jumbotron #castPanel ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+#app .jumbotron #castPanel ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+#app .jumbotron #castPanel ul li .image {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.8);
+}
+
+#app .jumbotron #castPanel ul li .image.female {
+  border: 1px solid #f92a50;
+}
+
+#app .jumbotron #castPanel ul li .image.male {
+  border: 1px solid #4693f2;
+}
+
+#app .jumbotron #castPanel ul li span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+#app .jumbotron #castPanel ul li span.charaName {
+  line-height: 50px;
+}
+
+#app #selection #collapseNormal {
+  max-width: 650px;
+}
+
+#app #selection #collapseNormal label#type {
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
+#app #selection #collapseNormal ul {
+  list-style: none;
+  border: 1px solid #000;
+}
+
+#app #selection #collapseNormal ul li label {
+  cursor: pointer;
+}
+
+#app #selection #collapseNormal ul li label input {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1em;
+  height: 1em;
+  background-color: #f41f4d;
+  border-radius: 3px;
+  border: 2px solid #fff;
+}
+
+#app #selection #collapseNormal ul li label input:checked {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#app #selection #collapseNormal button {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#app .container {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(0, 0, 0, 0.5)), color-stop(50%, rgba(0, 0, 0, 0.5)), color-stop(50%, white), color-stop(80%, white));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.5) 50%, white 50%, white 80%);
+  background-size: 100px 100px;
+}
+
+#app .container #data-panel {
+  width: 100%;
+}
+
+#app .container #data-panel .box {
+  position: relative;
+}
+
+#app .container #data-panel .box .image {
+  height: 400px;
+  width: 100%;
+}
+
+#app .container #data-panel .box .image .content {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#app .container #data-panel .box .image .content:hover {
+  background-color: transparent;
+}
+
+#app .container #data-panel .box .image .content:hover p {
+  color: transparent;
+}
+
+#app .container #data-panel .box .image .content p {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+#app .container #data-panel .box i {
+  position: absolute;
+  right: 1em;
+  bottom: .5em;
+  font-size: 2em;
+  color: rgba(129, 129, 129, 0.8);
+}
+
+@-webkit-keyframes bigger {
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bigger {
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+#app .container #data-panel .box i.fav {
+  color: #f24;
+  -webkit-animation: bigger 1s 1;
+          animation: bigger 1s 1;
+}
+
+#app .container #data-panel .box .smallPic {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 1;
+}
+
+#app #favlistBtn {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  border-radius: 50%;
+  background-color: #343A40;
+  -webkit-box-shadow: 0px 0px 5px #eee;
+          box-shadow: 0px 0px 5px #eee;
+  width: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#app #favlistBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#app #favlistBtn i {
+  font-size: 2em;
+  color: #f24;
+}
+
+#app #favlistBtn div {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  font-size: .5em;
+}
+
+#app #favPanel {
+  position: fixed;
+  right: 1em;
+  top: 100px;
+  background-image: linear-gradient(20deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.5) 100%);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+#app #favPanel h3 {
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  font-size: 20px;
+}
+
+#app #favPanel ul {
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+#app #favPanel ul::-webkit-scrollbar {
+  width: 12px;
+}
+
+#app #favPanel ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+#app #favPanel ul li {
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 180px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#app #favPanel ul li .image {
+  width: 50px;
+  height: 60px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#app #favPanel ul li:hover {
+  background-color: #555;
+}
+
+#app #favPanel ul li i {
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 30px;
+  line-height: 50px;
+}
+
+#app #favPanel ul li i:hover {
+  color: #f24;
+}
+
+#app #detailPanel {
+  position: fixed;
+  width: 600px;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 1100;
+  min-width: 350px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  background-image: linear-gradient(20deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+#app #detailPanel .left .time span {
+  padding: 5px;
+  background-color: #fcc92f;
+  border-radius: 50px;
+  color: #000;
+}
+
+#app #detailPanel .left .time span.date {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#app #detailPanel .left .genres .genre {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+#app #detailPanel .left p {
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+#app #detailPanel .left p::-webkit-scrollbar {
+  width: 12px;
+}
+
+#app #detailPanel .left p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+#app #detailPanel .right .title i {
+  font-size: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#app #detailPanel .right .title i:hover {
+  color: #f24;
+}
+
+#app #detailPanel .right ul {
+  list-style: none;
+  margin: 0;
+  height: 350px;
+  overflow-y: auto;
+}
+
+#app #detailPanel .right ul::-webkit-scrollbar {
+  width: 12px;
+}
+
+#app #detailPanel .right ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+#app #detailPanel .right ul li {
+  border-bottom: 2px rgba(255, 255, 255, 0.5) dashed;
+}
+
+#app #detailPanel .right ul li .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#app #detailPanel .right ul li .name {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#app #detailPanel .right ul li .name div {
+  word-break: break-all;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #F92F5E;
+  border: 1px solid #fff;
+}
+
+.page-item.disabled .page-link {
+  color: #868e96;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #F92F5E;
+  border-color: #718393;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #A50F2F;
+  border-color: #fff;
+}
+
+.page-link:focus, .page-link:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #A50F2F;
+  border-color: #fff;
+}
+/*# sourceMappingURL=findTV.css.map */

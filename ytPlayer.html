@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Roboto+Mono|Trirong&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="./css/ytPlayer.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>泰時刻　THAISKR | 音樂播放</title>
+</head>
+
+<body>
+  <!-- navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <!-- <button id="playBtn">play</button>
+  <button id="stopBtn">stop</button>
+  <button id="againBtn">again</button>
+  <button id="changeBtn">change</button>
+  <div id="player"></div> -->
+
+  <div id="mainPanel" class="row">
+
+    <div class="left col-md-5 col-12">
+
+      <canvas id="mycanvas">
+
+      </canvas>
+      <i id="infoIcon" class="fas fa-info-circle" data-container="body" data-toggle="popover" data-placement="bottom"
+        data-content="用滑鼠在橘色區塊dj唱盤上順時針或逆時針拖曳試看看!"></i>
+      <img src="" alt="" id="image">
+      <div class="btns">
+        <div id="prevBtn" class="btn"><i class="fas fa-chevron-circle-left"></i></div>
+        <div id="playBtn" class="btn">
+          <i id="playIcon" class="fas fa-play-circle"></i>
+          <!-- <i class="fas fa-pause-circle"></i> -->
+        </div>
+        <div id="nextBtn" class="btn"><i class="fas fa-chevron-circle-right"></i></div>
+      </div>
+
+    </div>
+    <div class="right col-md-7 col-12">
+      <div id="player"></div>
+      <h3 class="m-3"><i class="fas fa-music mr-3"></i>歌曲內容</h3>
+      <div id="description"></div>
+    </div>
+  </div>
+  <div class="loadingPanel"></div>
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+    $(".loadingPanel").load("./layout/loading.html")
+  </script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://www.youtube.com/player_api"></script> -->
+  <script src="./js/ytPlayer.js"></script>
+</body>
+
+</html>

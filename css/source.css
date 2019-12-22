@@ -1,0 +1,223 @@
+@charset "UTF-8";
+* {
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體';
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #E8F2EA;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+#panel h1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#panel #sourceList li {
+  background-color: transparent;
+}
+
+#panel #sourceList li a {
+  text-decoration: none;
+  font-weight: 900;
+  color: #555;
+}
+
+#giant .body {
+  background-color: #f24;
+}
+
+.right p {
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ef5f5f;
+  font-weight: 700;
+}
+
+.right p b {
+  font-weight: 900;
+  color: #b22020;
+}
+
+#card {
+  background-color: #DCF2EA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+}
+
+#card form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#card form > * {
+  margin: 2px;
+  padding: 10px;
+  outline: none;
+}
+
+#card form h1 {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+#card form input, #card form textarea {
+  font-size: 15px;
+  background-color: #B2E7D3;
+  border: solid 4px #ebf8f3;
+}
+
+#card form h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+#card form .gender {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#card form .gender i {
+  margin-right: 15px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+#card form .gender input {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+#card form .gender input:checked {
+  background-color: #bee7d8;
+}
+
+#card form h3 {
+  font-weight: 900;
+}
+
+#card form .interest {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+#card form .interest * {
+  vertical-align: bottom;
+}
+
+#card form .interest input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#card form .interest input:checked {
+  background-color: #bee7d8;
+}
+
+#card form button {
+  background-color: #B2E7D3;
+  font-weight: 900;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: solid 4px #ebf8f3;
+  border-radius: 10px;
+}
+
+#card form button:hover {
+  background-color: #ebf8f3;
+  color: #B2E7D3;
+}
+
+form .result {
+  background-color: #B2E7D3;
+  border: solid 3px white;
+  border-radius: 5px;
+}
+
+form .result ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+form .result ul li {
+  margin: 5px;
+  list-style-type: none;
+}
+
+form .result ul li a {
+  color: #cdece1;
+  text-decoration: none;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+form .result ul li a:hover {
+  color: #92d6bd;
+  font-weight: 900;
+}
+/*# sourceMappingURL=source.css.map */

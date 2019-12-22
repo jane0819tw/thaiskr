@@ -1,0 +1,178 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+*
+  // border: 1px solid #000
+  font-family: 'Roboto Mono', 'Trirong', '微軟正黑體'
+html,body
+  margin: 0
+  height: auto
+  background-color: #b23d13
+#app
+  width: 100%
+#screenPanel
+  height: 90vh
+#newsPieces
+  position: relative
+  // perspective-origin: center center
+  // perspective: 500px
+  +size(700px,400px)
+
+  .news
+    background-color: #eee
+    position: absolute
+    transform-style: preserve-3d
+    // transform-origin: bottom right
+    // transform-origin: top left
+    transition: 1s, transform-origin 0s
+    cursor: grab
+    opacity: 1
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3)
+    +size(100%)
+    &:hover
+      transform: scale(1.05)
+    .image
+      width: 100%
+      height: 70%
+      background-color: #555
+      background-blend-mode: hard-light
+      &.cover
+        background-color: transparent
+    .date
+      color: #888
+      font-size: 15px
+      letter-spacing: 2px
+      font-weight: 800
+      .topic
+        border-radius: 10px
+        background-color: #f43f4e
+        color: #fff
+        padding: 5px
+
+    .page
+      border-radius: 50%
+      background-color: orange
+      display: flex
+      justify-content: center
+      align-items: center
+      color: brown
+      font-weight: 900
+      +size(30px)
+    .title
+      font-size: 22px
+      font-weight: 700
+    .description
+    h5
+      font-weight: 800
+      letter-spacing: 2.5px
+      text-align: center
+      color: #32636A
+
+    .source
+      a
+        text-decoration: none
+        font-weight: 800
+        color: #bbb
+        transition: 0.3s
+        &:hover
+          color: #888
+    &.openLeft
+      transform: rotate3d(1,-1,0,90deg)
+      opacity: 0.5
+      width: 0%
+
+@for $i from 0 through 19
+
+  .news#{$i}
+    transform-origin: center center
+    transform: rotate(#{-2.5+$i*0.3deg})
+
+#selPanel
+  .btn-group
+    display: flex
+    flex-wrap: wrap
+    label
+      border-radius: 10px
+  .locate
+    background-color: #ff2244
+    border-radius: 50px
+    cursor: pointer
+    +size(40px)
+
+    i
+      font-size: 20px
+      width: 20%
+
+      transition: 0.3s
+
+    &:hover
+      color: #fff
+      transform: scale(0.95)
+
+#dataPanel
+  #hotPanel
+    width: 100%
+    max-width: 900px
+
+    .hot
+      cursor: pointer
+      transition: 0.5s
+
+      &:hover
+        transform: scale(0.9)
+        box-shadow: 0 0 5px #fff
+      .image
+        width: 100%
+        height: 200px
+        background-color: #555
+        box-shadow: 0 0 5px rgba(0,0,0,0.3)
+      .title
+        position: absolute
+        font-weight: 800
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        background-color: rgba(#222,0.7)
+        padding: 3px
+        color: #fff
+  ul
+    width: 100%
+    max-width: 900px
+    li
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      margin: 2px
+      background-color: rgba(0,0,0,0.5)
+      border: 1px solid rgba(255,255,255,0.5)
+      color: #fff
+      &:hover
+        background-color: #eee
+        color: #000
+
+      .image
+        height: 100px
+        width: 100px
+        flex-shrink: 0
+        background-color: #555
+        border-radius: 10px
+      .content
+        width: calc(100% - 100px)
+
+        .title
+          font-size: 1.2em
+        .date
+          text-align: right
+
+.modal-dialog
+  // height: 100%
+  top: 50%
+  left: 50%
+  position: absolute
+  transform: translate(-50%,-50%) !important
+
+// revise color
+#giant
+  .body
+    // background-color: #AB292B
+    background-color: #32636A

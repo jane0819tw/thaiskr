@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泰時刻　THAISKR | 泰文字母鍵盤練習</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/keyboard.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!--thaiaudio https://www.omniglot.com/writing/-->
+  <!--https://www.omniglot.com/soundfiles/alphabets/alphabet_th.mp3-->
+  <!--畫面上有鍵盤和顯示部分(輸入框)-->
+  <!--當實際的鍵盤點擊，鍵盤瞬間變色，泰文字母出現在輸入框-->
+  <!--按下enter 後播放showlist 表示目前處理字串,正在處理的文字和鍵盤變色-->
+  <!--kb 架構-->
+  <!-- navigation -->
+  <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light"></nav>
+
+  <div class="panel">
+    <hr>
+    <!-- <h3>泰文鍵盤練習</h3> -->
+    <div class="show">
+      <textarea id="input" rows="1" placeholder="請輸入泰文"></textarea>
+      <div tabindex="0" class="enter"><i class="fas fa-random"></i></div>
+      <div class="showlist">show thai letters</div>
+      <div class="soundLetter"></div>
+    </div>
+    <div class="keyboards">
+      <div class="row row1">
+        <div class="kb kb1">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb2">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb3">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb4">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb5">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb6">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb7">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb8">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb9">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb10">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb11">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb12">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row row2">
+        <div class="kb kb13">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb14">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb15">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb16">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb17">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb18">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb19">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb20">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb21">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb22">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb23">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb24">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb25">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row row3">
+        <div class="kb kb26">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb27">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb28">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb29">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb30">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb31">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb32">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb33">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb34">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb35">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb36">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row row4">
+        <div class="kb kb37">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb38">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb39">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb40">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb41">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb42">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb43">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb44">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb45">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+        <div class="kb kb46">
+          <div class="letter">
+            <div class="chi"></div>
+            <div class="eng"></div>
+          </div>
+          <div class="thai">
+            <div class="tShift"></div>
+            <div class="tMain"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="test" src="https://www.omniglot.com/soundfiles/alphabets/alphabet_th.mp3"></audio>
+  <div class="description">
+    <div class="button">使用說明</div>
+    <br>
+    <p class="close">請調整成英文輸入,<br>按下大寫鈕或是shift可以轉上排泰文字<br>輸入完成按下畫面的黃色按鈕<br>給大家學習泰語發音或是鍵盤打字用~<br>支援大部分輔音發聲 母音沒有聲音喔!
+      <br>若有問題請重新整理~:)
+    </p>
+  </div>
+  <div class="logos">
+    <div class="logo"></div><a href="https://www.facebook.com/pg/thaiskrthai/" target="_blank"><i
+        class="fab fa-facebook-square"></i></a><a class="yt"
+      href="https://www.youtube.com/channel/UC-BjLbOY4VnYD3nouWYzs9w" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="loadingPanel"></div>
+  <!-- loading interface -->
+  <script>
+    $(".navbar").load("./layout/navbar.html")
+    $(".loadingPanel").load("./layout/loading.html")
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script type="module" src="js/keyboard.js"></script>
+</body>
+
+</html>
