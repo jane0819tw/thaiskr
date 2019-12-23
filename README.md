@@ -4,7 +4,7 @@ a project that is about my website.
 
 this website contains these functions pages: 
 * [index](#index)
-[](gif/index1.gif)
+![](gif/index1.gif)
 * findMovie(#findMovie)
 * findTV(#findTV)
 * keyboard(#keyboard)
