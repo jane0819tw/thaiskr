@@ -3,7 +3,6 @@
 a project that is about my website.
 ## how to use 
 this website contains these functions pages: 
-* [index](#index)
 ![](gif/index1.gif)
 Users can click the building to get a quote, and the door will open. 
 In this part, user can click the button and move the mouse, the thai letters will appear by random,as a result, the sreen will compute the letter which appear most times during the time and show.
