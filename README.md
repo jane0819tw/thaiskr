@@ -1,6 +1,7 @@
 # THAISKR 
 [web link](https://jane0819tw.github.io/thaiskr/)
-a project that is about my website.
+
+a project that is about my website, use the frontend skills to make this website.
 ## how to use 
 this website contains these functions pages: 
 
