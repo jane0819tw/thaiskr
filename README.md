@@ -89,11 +89,11 @@ support normal seach and keywords search.
 use <code>localStorage</code> to store what the users choose. 
 (Note: [how to use localStorage](https://hackmd.io/QMX4yniKQhWjkUAuOmERUg))
 
-* practice Vue
+* practice <code>Vue</code>
 I try to use <code>Vue</code> in findTV page. 
-* wheel listener
+* <code>wheel listener</code>
 Use wheel listener to slide the panel. 
-* use TweenMax to make animation. 
+* use <code>TweenMax</code> to make animation. 
 ### keyboard
 This page is difficult in data format processing.I make a data file that is suit for my functions. 
 
