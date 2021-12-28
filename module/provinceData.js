@@ -15,7 +15,7 @@ export let provinceData = [{
   eng_name: 'Ayutthaya'
 }, {
   part: 'Center',
-  thai_name: 'กำแพงเพชร',
+  thai_name: 'กรุงเทพฯ',
   chi_name: '曼谷',
   eng_name: 'Bangkok'
 }, {
