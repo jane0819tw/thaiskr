@@ -362,7 +362,7 @@ function draw() {
 
 canvas.addEventListener('mousedown', evt => {
   // 取得元素裡面的位置
-  game.posmouse = new Vec2(evt.layerX, evt.layerY)
+  game.posmouse = new Vec2(evt.offsetX, evt.offsetY)
   if (game.status != 'waiting') {
     // 檢查有沒有點到
     if (game.clickA || game.clickQ) {
@@ -372,7 +372,7 @@ canvas.addEventListener('mousedown', evt => {
         game.firstTimeClickAction()
         // 開始拖曳
         game.lines.push(new Line({
-          startPos: new Vec2(evt.layerX, evt.layerY),
+          startPos: new Vec2(evt.offsetX, evt.offsetY),
           endPos: new Vec2(game.posmousemove.x, game.posmousemove.y)
         }))
         console.log('push')
@@ -393,7 +393,7 @@ canvas.addEventListener('mousedown', evt => {
 
 canvas.addEventListener('mousemove', evt => {
   // 取得元素裡面的位置
-  game.posmousemove = new Vec2(evt.layerX, evt.layerY)
+  game.posmousemove = new Vec2(evt.offsetX, evt.offsetY)
 
 })
 
