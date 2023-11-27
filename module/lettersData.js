@@ -45,6 +45,6 @@ export let lettersData = [
   { id: 43, type: 2, typeName: '中子音', text: 'อ', start: 83, dur: 2000, sound: 'or àang', vocabulary: 'อ.อ่าง', mean: '甕' },
   {
     id: 44,
-    type: 1, typeName: '低子音', text: 'ฮ', start: 85, dur: 2500, sound: 'hor nók hôok', vocabulary: 'ฮ.นกฮูกเจ้าขา', mean: '貓頭鷹'
+    type: 1, typeName: '低子音', text: 'ฮ', start: 85, dur: 2500, sound: 'hor nók hôok', vocabulary: 'ฮ.นกฮูก', mean: '貓頭鷹'
   }
 ]
