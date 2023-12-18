@@ -8,6 +8,8 @@ const soundLetter = document.querySelector('.soundLetter')
 const test = document.getElementById('test')
 const hint = document.querySelector('.close')
 const descriptBtn = document.querySelector('.button')
+const sponsorBtn = document.querySelector('.sponsorBtn')
+const sponsorHintBtn = document.querySelector('.sponsorHint')
 
 let loadingPanel = document.querySelector('.loadingPanel')
 init()
@@ -140,4 +142,12 @@ enter.addEventListener('click', () => {
 
 descriptBtn.addEventListener('click', () => {
   hint.classList.toggle('open')
-})
+});
+
+sponsorBtn.addEventListener('mouseover', () => {
+  sponsorHintBtn.style.opacity = 1;
+});
+
+sponsorBtn.addEventListener('mouseout', () => {
+  sponsorHintBtn.style.opacity = 0;
+});

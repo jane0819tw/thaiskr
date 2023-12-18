@@ -317,4 +317,30 @@ html, body {
 .logos a i {
   font-size: 30px;
 }
+
+.sponsor {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.sponsorBtn {
+  background-color: #FABF90;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 800;
+}
+.sponsorHint {
+  position: relative;
+  text-align: right;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 /*# sourceMappingURL=keyboard.css.map */
