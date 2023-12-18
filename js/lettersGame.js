@@ -323,6 +323,8 @@ const topic1 = document.getElementById('topic1')
 const topic2 = document.getElementById('topic2')
 const typeName = document.getElementById('typeName')
 const audio = document.getElementById('audio')
+const sponsorBtn = document.querySelector('.sponsorBtn')
+const sponsorHintBtn = document.querySelector('.sponsorHint')
 let loadingPanel = document.querySelector('.loadingPanel')
 let ww, wh
 let game
@@ -405,6 +407,14 @@ document.getElementById('startBtn').addEventListener('click', evt => {
     alert('請選擇不同選項~')
   }
 })
+
+sponsorBtn.addEventListener('mouseover', () => {
+  sponsorHintBtn.style.opacity = 1;
+});
+
+sponsorBtn.addEventListener('mouseout', () => {
+  sponsorHintBtn.style.opacity = 0;
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   console.log('hello')
