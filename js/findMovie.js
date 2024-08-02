@@ -276,11 +276,15 @@
 
   // listen to pagination
   pagination.addEventListener('click', evt => {
+    let selOption = searchNodes.sort_by.querySelector('option:checked')
+    let selGenres = []
+    genresList.querySelectorAll('input[name="genre"]:checked').forEach(sel => selGenres.push(sel.value))
+    let queryText = selGenres.reduce((total, id) => total + id + '|', '')
     if (evt.target.tagName === 'A') {
       let page = parseInt(evt.target.dataset.id)
       if (page !== pageNow) {
         pageNow = page
-        getAPIData(pageNow, { page: pageNow })
+        getAPIData(pageNow, { page: pageNow, sort_by: selOption?.dataset?.value, with_genres: queryText })
       }
     }
   })
@@ -292,7 +296,6 @@
     let selGenres = []
     genresList.querySelectorAll('input[name="genre"]:checked').forEach(sel => selGenres.push(sel.value))
     let queryText = selGenres.reduce((total, id) => total + id + '|', '')
-    console.log(queryText)
     new_arg.with_genres = queryText
 
     if (selOption.dataset.value) {
@@ -317,13 +320,11 @@
         }).then(res => {
           // 如果有關鍵字
           if (res.data.results.length) {
-            console.log(res.data.results)
             result = res.data.results.find(key => key.name === keyword) || res.data.results[0]
           }
         }).catch(e => console.log(e))
         .then(() => {
           if (result) {
-            console.log(result.name)
             pageNow = 1
             getAPIData(pageNow, { with_keywords: result.id })
           }
