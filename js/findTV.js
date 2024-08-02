@@ -75,7 +75,6 @@ let vm = new Vue({
         language: 'zh-tw'
       }
     }).then(res => {
-      console.log(res.data.genres)
       this.genres = res.data.genres
       // genreAll = [...res.data.genres]
       // writeGenres(genreAll)
@@ -91,17 +90,13 @@ let vm = new Vue({
       }
     },
     getProgramData(id, evt) {
-      console.log(evt)
-
       this.count++
       setTimeout(() => {
         // 打開詳細資料
         if (this.count === 1) {
           this.updateDetail(id)
-          console.log(this.count)
         } else if (this.count === 2) {
           // 加到最愛
-          console.log(id)
           let fav = this.programList.find(program => program.id === id)
           let favIndex = this.favlist.findIndex(fav => fav.id === id)
           // 看看有沒有被加入了
@@ -119,7 +114,6 @@ let vm = new Vue({
             // 從最愛清單移除
             this.favlist.splice(favIndex, 1)
           }
-          console.log(this.count)
         }
         this.count = 0
       }, 400)
@@ -141,14 +135,11 @@ let vm = new Vue({
       }).then(function (res) {
         _this.detailProgram = res.data
         _this.isDetailOpen = true
-        console.log(_this.detailProgram)
       }).catch(e => console.log(e))
     },
     updateCast(pid) {
-      console.log(pid)
       this.isCastOpen = true
       this.castlist = this.programLatest.find(program => program.id === pid).credits.cast
-      console.log(this.castlist)
       TweenMax.from('#castPanel', 0.5, {
         scaleX: 0.8,
         scaleY: 0.8,
@@ -201,16 +192,12 @@ let vm = new Vue({
       let args = {}
       Object.assign(args, def_args)
       Object.assign(args, this.selected_args)
-      console.log(args)
       args.page = page
       axios.get(`${API_URL}3/discover/tv`, {
         params: args
       }).then(res => {
-        console.log(res.data)
         this.pageTotal = res.data.total_pages
         this.programList = res.data.results.filter(program => program.poster_path != null)
-        console.log('this.programList:')
-        console.log(this.programList)
         this.getPaginationShow()
       }).catch(e => console.log(e))
       this.pageNow = page
@@ -220,13 +207,11 @@ let vm = new Vue({
       this.selected_args.sort_by = document.getElementById('sort_by').value
       this.selected_args.with_genres = Array.from(document.querySelectorAll('input[name="genre"]:checked'))
         .map(genre => genre.value).join('||')
-      console.log(this.selected_args)
       this.getPageData(1)
       document.getElementById('collapseNormal').classList.remove('show')
     },
     keywordSearch() {
       let keyword = document.getElementById('keywordInput').value.trim().toLowerCase()
-      console.log(keyword)
       if (keyword) {
         axios.get(`${API_URL}3/search/keyword`, {
           params: {
@@ -234,7 +219,6 @@ let vm = new Vue({
             query: keyword
           }
         }).then(res => {
-          console.log(res.data.results)
           this.selected_args = {}
           if (res.data.results.length) {
             this.selected_args.with_keywords = res.data.results.map(word => word.id).join('||')
@@ -259,7 +243,6 @@ let vm = new Vue({
 })
 // deal with loading
 document.getElementById('giant').addEventListener('click', evt => {
-  console.log('click')
   document.querySelector('#tvshow').classList.add('hideLoading')
   document.getElementById('giant').classList.add('showBeside')
 })
